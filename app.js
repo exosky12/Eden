@@ -17,12 +17,10 @@ function toggleNav(){
 // Pour visualiser le local storage => F12, onglet "Application", "Local Storage" (colonne de gauche) puis "https://cdpn.io/"
 
 // Ligne 4 à décommenter pour vider le localStorage
-// localStorage.clear();
+localStorage.clear();
 
 // Tes données/produits (idéalement un fichier .json)
 
-// const products = fetch("index.json")
-// .then(res => res.json())
 
 const products = [
 	{ id: 1, name: "Nike Air Force 1", price: 129.99, gender: "women" , colors: ["red", "white"]},
@@ -135,6 +133,16 @@ hearts.forEach((heart) => {
             // On ajoute l'id du produit au tableau présent en tant que valeur de la clé "fav"
             currentCart.push(productSection);
             window.localStorage.setItem("fav", JSON.stringify(currentCart));
+
+            const favorites = document.querySelector('.allFavorites')
+
+            favorites.innerHTML = `
+            <div class="add-to-favoris">
+                <h2>${parseInt(window.localStorage.getItem('fav'))}</h2
+            <div>
+            `
         }
     });
 });
+
+

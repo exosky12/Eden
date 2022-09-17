@@ -8,6 +8,7 @@ function toggleFilter(){
     filters.classList.toggle('activeFilter');
 }
 
+
 const checkbox = document.querySelectorAll('.checkbox')
 
 checkbox.forEach((button) => {
@@ -49,6 +50,13 @@ genderMale.addEventListener('click', () => {
         productSection.appendChild(newCard);
     
     })
+    const addToFavoriteIcon = document.querySelectorAll(".add-to-favorite");
+
+addToFavoriteIcon.forEach((button) => {
+    button.addEventListener("click", () => {
+        button.classList.toggle("clicked");
+    });
+});
 
 })
 
@@ -77,7 +85,14 @@ genderWomen.addEventListener('click', () => {
         productSection.appendChild(newCard);
     
     })
+    const addToFavoriteIcon = document.querySelectorAll(".add-to-favorite");
 
+    addToFavoriteIcon.forEach((button) => {
+        button.addEventListener("click", () => {
+            button.classList.toggle("clicked");
+        });
+    });
+    
 })
 
 
@@ -106,7 +121,14 @@ down50Btn.addEventListener('click', () => {
         productSection.appendChild(newCard);
     
     })
+    const addToFavoriteIcon = document.querySelectorAll(".add-to-favorite");
 
+    addToFavoriteIcon.forEach((button) => {
+        button.addEventListener("click", () => {
+            button.classList.toggle("clicked");
+        });
+    });
+    
 })
 
 
@@ -135,7 +157,14 @@ down100Btn.addEventListener('click', () => {
         productSection.appendChild(newCard);
     
     })
+    const addToFavoriteIcon = document.querySelectorAll(".add-to-favorite");
 
+    addToFavoriteIcon.forEach((button) => {
+        button.addEventListener("click", () => {
+            button.classList.toggle("clicked");
+        });
+    });
+    
 })
 
 
@@ -164,7 +193,14 @@ down150Btn.addEventListener('click', () => {
         productSection.appendChild(newCard);
     
     })
+    const addToFavoriteIcon = document.querySelectorAll(".add-to-favorite");
 
+    addToFavoriteIcon.forEach((button) => {
+        button.addEventListener("click", () => {
+            button.classList.toggle("clicked");
+        });
+    });
+    
 })
 
 
@@ -192,7 +228,14 @@ up150Btn.addEventListener('click', () => {
         productSection.appendChild(newCard);
     
     })
+    const addToFavoriteIcon = document.querySelectorAll(".add-to-favorite");
 
+    addToFavoriteIcon.forEach((button) => {
+        button.addEventListener("click", () => {
+            button.classList.toggle("clicked");
+        });
+    });
+    
 })
 
 
@@ -223,6 +266,13 @@ croissantBtn.addEventListener('click', () => {
         productSection.appendChild(newCard);
     
     })
+    const addToFavoriteIcon = document.querySelectorAll(".add-to-favorite");
+
+addToFavoriteIcon.forEach((button) => {
+    button.addEventListener("click", () => {
+        button.classList.toggle("clicked");
+    });
+});
 
 })
 
@@ -254,7 +304,14 @@ decroissantBtn.addEventListener('click', () => {
         productSection.appendChild(newCard);
     
     })
+    const addToFavoriteIcon = document.querySelectorAll(".add-to-favorite");
 
+    addToFavoriteIcon.forEach((button) => {
+        button.addEventListener("click", () => {
+            button.classList.toggle("clicked");
+        });
+    });
+    
 })
 
 
@@ -282,7 +339,14 @@ white.addEventListener('click', () => {
         productSection.appendChild(newCard);
     
     })
+    const addToFavoriteIcon = document.querySelectorAll(".add-to-favorite");
 
+    addToFavoriteIcon.forEach((button) => {
+        button.addEventListener("click", () => {
+            button.classList.toggle("clicked");
+        });
+    });
+    
 })
 
 
@@ -311,7 +375,14 @@ black.addEventListener('click', () => {
         productSection.appendChild(newCard);
     
     })
+    const addToFavoriteIcon = document.querySelectorAll(".add-to-favorite");
 
+    addToFavoriteIcon.forEach((button) => {
+        button.addEventListener("click", () => {
+            button.classList.toggle("clicked");
+        });
+    });
+    
 })
 
 
@@ -340,7 +411,14 @@ brown.addEventListener('click', () => {
         productSection.appendChild(newCard);
     
     })
+    const addToFavoriteIcon = document.querySelectorAll(".add-to-favorite");
 
+    addToFavoriteIcon.forEach((button) => {
+        button.addEventListener("click", () => {
+            button.classList.toggle("clicked");
+        });
+    });
+    
 })
 
 
@@ -369,7 +447,14 @@ green.addEventListener('click', () => {
         productSection.appendChild(newCard);
     
     })
+    const addToFavoriteIcon = document.querySelectorAll(".add-to-favorite");
 
+    addToFavoriteIcon.forEach((button) => {
+        button.addEventListener("click", () => {
+            button.classList.toggle("clicked");
+        });
+    });
+    
 })
 
 
@@ -397,7 +482,14 @@ blue.addEventListener('click', () => {
         productSection.appendChild(newCard);
     
     })
+    const addToFavoriteIcon = document.querySelectorAll(".add-to-favorite");
 
+    addToFavoriteIcon.forEach((button) => {
+        button.addEventListener("click", () => {
+            button.classList.toggle("clicked");
+        });
+    });
+    
 })
 
 
@@ -425,7 +517,14 @@ grey.addEventListener('click', () => {
         productSection.appendChild(newCard);
     
     })
+    const addToFavoriteIcon = document.querySelectorAll(".add-to-favorite");
 
+    addToFavoriteIcon.forEach((button) => {
+        button.addEventListener("click", () => {
+            button.classList.toggle("clicked");
+        });
+    });
+    
 })
 
 
@@ -453,7 +552,14 @@ yellow.addEventListener('click', () => {
         productSection.appendChild(newCard);
     
     })
+    const addToFavoriteIcon = document.querySelectorAll(".add-to-favorite");
 
+    addToFavoriteIcon.forEach((button) => {
+        button.addEventListener("click", () => {
+            button.classList.toggle("clicked");
+        });
+    });
+    
 })
 
 
@@ -481,6 +587,13 @@ purple.addEventListener('click', () => {
         productSection.appendChild(newCard);
     
     })
+    const addToFavoriteIcon = document.querySelectorAll(".add-to-favorite");
 
+    addToFavoriteIcon.forEach((button) => {
+        button.addEventListener("click", () => {
+            button.classList.toggle("clicked");
+        });
+    });
+    
 })
 
