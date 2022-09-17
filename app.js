@@ -64,7 +64,22 @@ const products = [
     { id: 39, name:"Nike Space Hippie 04", price: 134.99, gender: "men", colors: ["green", "grey"]}
 ];
 
+const searchinput = document.getElementById('searchInput');
 const productSection = document.querySelector(".allProducts");
+
+searchinput.addEventListener('keyup', function(){
+    const input = searchinput.value;
+
+    const result = products.filter(item => item.name.toLocaleLowerCase().includes(input.toLocaleLowerCase()));
+
+    let suggestion = '';
+
+    result.forEach(resultItem => 
+        suggestion +=`
+        <div class="suggestion">$(resultItem.name)</div>
+        `
+        )
+})
 
 function name_pic(name) {
 
