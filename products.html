@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="products.css">
+    <script src="app.js" defer></script>
+    <script src="products.js" defer></script>
+    <title>Produits - EdenShop</title>
+</head>
+<body>
+    <div class="container--nav">
+        <a class="slide-line h1" href="index.html">Eden Shop</a>
+
+        <div class="search--feature">
+            <img class="search--icon" src="assets/search-icon.png" alt="icone de recherche">
+            <input type="search" placeholder="Rechercher">
+        </div>
+
+        <div class="right--side--icon">
+            <button><img class="account--icon" src="assets/account-icon.png" alt="icone de compte"></button>
+            <button><img class="cart--icon" src="assets/cart-icon.png" alt="icone de panier"></button>
+            <button class="nav-toggler" type="button" aria-label="toggle curtain navigation">
+                <span class="line l1"></span>
+                <span class="line l2"></span>
+                <span class="line l3"></span>
+            </button>
+        </div>  
+        <nav>
+            <a class="slide-line" href="index.html">Accueil</a>
+            <a class="slide-line" href="products purplefilter yellowfilter greyfilter bluefilter greenfilter brownfilter.html" target="_blank">Produits</a>
+            <a class="slide-line">Homme</a>
+            <a class="slide-line">Femme</a>
+            <a class="slide-line">Vos favoris</a>
+            <a class="slide-line">Meilleures ventes</a>
+            <a class="slide-line">Panier</a>
+            <button class="becomeMember">Devenir membre</button>
+            <button class="connectMenu">Se connecter</button>
+        </nav>
+            
+        </ul>
+    </div>
+
+<div class="opacityMenuOpened">
+    <main>
+        <section id="entête">
+            <h2 class="slogan">Achetez maintenant, profitez maintenant</h2>
+            <a href="index.html" class="fil-ariane-homepage">Accueil > Produits ></a>
+        </section>
+
+        <section id="products"> 
+
+            <button class="filter-toggler filter-toggler-icon" type="button" aria-label="toggle curtain filter">
+                <span class="lines l4"></span>
+                <span class="lines l5"></span>
+                <span class="lines l6"></span>
+            </button>
+            <h2 class="showFilter">Filtres de recherche</h2>
+
+            <div class="filter">
+
+                <div class="allFilters">
+
+                    <div class="genderInput">
+                        <h2 class="gender">Sexe</h2>
+                        <div class="btn">
+
+                            <button class="checkbox maleBtn">
+                                <h3>Homme</h3>
+                            </button>
+
+                            <button class="checkbox femaleBtn">
+                                <h3>Femme</h3>
+                            </button>
+
+                        </div>
+                    </div>
+
+
+                    <div class="priceInput">
+                        <h2 class="price">Prix</h2>
+                        <div class="btn">
+
+                            <button class="checkbox down50Btn">
+                                <h3>- 50 €</h3>
+                            </button>
+
+                            <button class="checkbox down100Btn">
+                                <h3>- 100 €</h3>
+                            </button>
+
+                            <button class="checkbox down150Btn">
+                                <h3>- 150 €</h3>
+                            </button>
+
+                            <button class="checkbox up150Btn">
+                                <h3>+ 150 €</h3>
+                            </button>
+                            
+                        </div>
+                    </div>
+                    
+
+                    <div class="sortInput">
+                        <h2 class="sort">Trier par</h2>
+                        <div class="btn">
+
+                            <button class="checkbox croissantBtn">
+                                <h3><span>Prix</span> Croissant</h3>
+                            </button>
+
+                            <button class="checkbox decroissantBtn">
+                                <h3><span>Prix</span> Décroissant</h3>
+                            </button>
+
+                        </div>
+                    </div>
+
+                    
+                    <div class="colorInput">
+                        <h2 class="color">Couleur</h2>
+                        <div class="btn">
+
+                            <button class="colorBtn whiteBtn checkboxColors">
+                                <div class=""></div>
+                                <h3>Blanc</h3>
+                            </button>
+
+                            <button class="colorBtn blackBtn checkboxColors">
+                                <div class="blackDiv"></div>
+                                <h3>Noir</h3>
+                            </button>
+
+                            <button class="colorBtn brownBtn checkboxColors">
+                                <div class="brownDiv"></div>
+                                <h3>Marron</h3>
+                            </button>
+
+                            <button class="colorBtn greenBtn checkboxColors">
+                                <div class="greenDiv"></div>
+                                <h3>Vert</h3>
+                            </button>
+
+                            <button class="colorBtn blueBtn checkboxColors">
+                                <div class="blueDiv"></div>
+                                <h3>Bleu</h3>
+                            </button>
+
+                            <button class="colorBtn greyBtn checkboxColors">
+                                <div class="greyDiv"></div>
+                                <h3>Gris</h3>
+                            </button>
+
+                            <button class="colorBtn yellowBtn checkboxColors">
+                                <div class="yellowDiv"></div>
+                                <h3>Jaune</h3>
+                            </button>
+
+                            <button class="colorBtn purpleBtn checkboxColors">
+                                <div class="purpleDiv"></div>
+                                <h3>Violet</h3>
+                            </button>
+                            
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            
+    <div class="allProducts">
+
+    </div>
+ 
+        </section>
+    </main>
+
+    <footer><div class="footer">
+
+        <h2>Se connecter/S’enregistrer</h2>
+        <h2>Conditions générales d’utilisation</h2>
+        <h2>Conditions générales de ventes</h2>
+        <h2>Mentions légales</h2>
+        <h2>Politique de retour/remboursement</h2>
+        <h2>Nous trouver</h2>
+        <div class="contact-us">
+            <h2>Nous contacter</h2>
+            <img src="assets/instagram-logo.png" alt="instagram logo">
+            <img src="assets/tel-logo.png" alt="tel logo">
+            <img src="assets/mail-logo.png" alt="mail logo">
+            <img src="assets/twitter-logo.png" alt="twitter logo">
+            <img src="assets/facebook-logo.png" alt="facebook logo">
+        </div>
+
+    </div></footer>
+</div>
+</div>
+</body>
+</html>
