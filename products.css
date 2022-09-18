@@ -33,186 +33,227 @@ body{
 }
             
             /* NAV */
-            
-.container--nav{
-    width: 100vw;
-    height: 100px;
-    background: #ccc;
-    top: -37px;
-    position: fixed;
-    z-index: 1000;
-}
-.container--nav .h1{
-    position: relative;
-    top: 45px;
-    left: 20px;
-    cursor: pointer;
-    font-size: 34px;
-    background: none;
-    font-family: 'Ibarra Real Nova', serif;
-    font-weight: 600;
-}
-.container--nav .search--feature{
-    background: none;
-    width: 200px;
-    margin: -30px auto;
-    position: relative;
-    left: -50px;
-}
-.container--nav .search--icon{
-    width: 30px;
-    height: 30px;
-    position: relative;
-    top: 42px;
-    left: 260px;
-    z-index: 10;
-}
-.container--nav input{
-    width: 300px;
-    height: 40px;
-    z-index: 1;
-    padding: 20px;
-    border-radius: 5px;
-}
-.container--nav input::placeholder{
-    position: relative;
-    font-style: italic;
-}
-.container--nav img{
-    background: none;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-}
-.container--nav button{
-    border: none;
-    background: none;
-}
-.container--nav .account--icon{
-    position: relative;
-    top: -13px;
-}
-.container--nav .cart--icon{
-    width: 45px;
-    height: 45px;
-    position: relative;
-    top: -16px;
-    left: 20px;
-}
-.container--nav .right--side--icon{
-    width: 170px;
-    margin-left: auto;
-    position: relative;
-    right: 20px;
-    top: -8px;
-    background: none;
-}
-.container--nav .nav{
-    position: fixed;
-    z-index: 100;
-}
-.container--nav .nav-toggler{
-    position: fixed;
-    z-index: 1000;
-    top: 8px;
-    right: 25px;
-    height: 50px;
-    width: 50px;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: transparent;
-}
-.container--nav .line{
-    position: absolute;
-    display: block;
-    height: 2px;
-    width: 100%;
-    background: #000;
-    transition: transform 0.3s ease-out, opacity 0.1s ease-out;
-}
-.container--nav .l1{
-    transform: translateY(-10px);
-}
-.container--nav .nav-toggler.active .l1{
-    transform: translateY(0) rotate(135deg);
-}
-.container--nav .nav-toggler.active .l2{
-    opacity: 0;
-}
-.container--nav .nav-toggler.active .l3{
-    transform: translateY(0) rotate(-135deg);
-}
-.container--nav .l3{
-    transform: translateY(10px);
-}
-.container--nav nav{
-    position: fixed;
-    width: 20vw;
-    min-width: 350px;
-    top: 0px;
-    right: -450px;
-    min-height: 75vh;
-    z-index: 100;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background: #fff;
-    border-left: 1px solid #1b1b1b;
-    border-bottom: 1px solid #1b1b1b;
-    box-shadow: -5px 5px 10px #1b1b1b;
-    transition: right 0.3s cubic-bezier(0.73, 0.11, 0.67, .84);
-}
-.opacityMenuOpened{
-    transition: opacity 0.1s ease-in-out;
-}
-.opacityMenuOpened.menuOpened .container--nav{
-    opacity: 1;
-    transition: opacity 0.2s ease-in-out;
-}
-.opacityMenuOpened.menuOpened{
-    opacity: 0.5;
-    transition: opacity 0.2s ease-in-out;
-}
-.container--nav nav a, .container--nav nav button{
-    font-weight: 500;
-    font-family: var(--main-font);
-    top: -0px;
-}
-.container--nav nav button{
-    width: auto;
-    font-size: 22px;
-    position: relative;
-    top: 0px;
-    height: 50px;
-    padding: 0px 30px;
-    font-weight: 600;
-}
-.container--nav nav .becomeMember{
-    background-color: #D9D9D9;
-}
-.container--nav nav .connectMenu{
-    margin-top: 10px;
-    background-color: #796B6B;
-}
-.container--nav nav.active{
-    right: 0;
-}
-.container--nav nav a{
-    font-family: var(--main-font);
-    color: #111;
-    font-size: 22px;
-    display: block;
-    margin: 15px 0;
-    background: none;
-    text-decoration: none;
-    cursor: pointer;
-}
-            /* ENTÊTE */ 
+   
+       .container--nav{
+        width: 100vw;
+        height: 100px;
+        background: #d6d5d5;
+        top: -37px;
+        position: fixed;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+    }
+    .container--nav .search--feature{
+        background: none;
+        width: 200px;
+        top: 15px;
+        position: absolute;
+        right: 250px;
+    }
+    .container--nav .search--icon{
+        width: 30px;
+        height: 30px;
+        position: relative;
+        top: 42px;
+        left: 260px;
+        z-index: 10;
+    }
+    .container--nav input{
+        width: 300px;
+        height: 40px;
+        z-index: 1;
+        padding: 20px;
+        border-radius: 5px;
+    }
+    .container--nav input::placeholder{
+        position: relative;
+        font-style: italic;
+    }            
+    .container--nav .account--icon{
+        width: 45px;
+        height: 45px;
+        background: none;
+        position: absolute;
+        margin-top: 49px;
+        right: 20px;
+        z-index: 1000;
+    }
+    .container--nav .account--icon img{
+        width: 100%;
+        height: 100%;
+    }
+    .container--nav .cart--icon{
+        width: 42px;
+        height: 42px;
+        background: none;
+        position: absolute;
+        margin-top: 50px;
+        right: 80px;
+        z-index: 1000;
+    }
+    .container--nav .cart--icon img{
+        width: 100%;
+        height: 100%;
+    }
+    .container--nav img{
+        background: none;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+    }
+    .container--nav button{
+        border: none;
+        background: none;
+    }
+    .container--nav nav{
+        position: fixed;
+        width: 20vw;
+        min-width: 350px;
+        top: 0px;
+        padding: 20px;
+        z-index: 1000;
+        display: flex;
+        background: none;
+    }
+    .container--nav nav a{
+        font-family: 'Open Sans', sans-serif;
+        background: none;
+        padding: 0 20px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: #000;
+        width: 200px;
+        cursor: pointer;
+    }
+    .container--nav nav a:hover{
+        color: #5e5e5e;
+    }
+    .container--nav nav .edenLogo{
+        font-size: 1.8rem;
+        font-weight: 600;
+        font-family: 'Ibarra Real Nova', serif;
+        position: relative;
+        top: -8px;
+    }
+    .navBurger{
+        width: 20vw;
+        min-width: 250px;
+        height: 100vh;
+        padding: 10px;
+        margin-top: 63px;
+        left: -700px;
+        z-index: 1000;
+        border-right: 0.5px solid #1b1b1b;
+        border-top: 0.5px solid #1b1b1b;
+        transition: left 0.5s cubic-bezier(0.50, 0.11, 0.67, .84);
+    }
+    .navBurger.active{
+        left: 0;
+        display: block;
+        background-color: #d6d5d5;
+        width: 30vw;
+        min-width: 270px;
+    }
+    .navBurger a{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .navBurger.active a{
+        display: flex;
+        padding: 15px 0;
+        font-size: 20px;
+        font-family: 'Open Sans', sans-serif;
+    }
+    .container--nav nav .becomeMember{
+        flex: 0 0 auto
+    }
+    .container--nav .nav-toggler{
+        position: fixed;
+        z-index: 1000;
+        top: 8px;
+        left: 25px;
+        height: 50px;
+        width: 30px;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+        display: none;
+    }
+    .container--nav .line{
+        position: absolute;
+        display: block;
+        height: 2px;
+        width: 100%;
+        background: #000;
+        transition: transform 0.3s ease-out, opacity 0.1s ease-out;
+    }
+    .navBurger.active .edenLogo{
+        font-size: 36px;
+        font-family: 'Ibarra Real Nova', serif;
+    }
+    .container--nav .l1{
+        transform: translateY(-10px);
+    }
+    .container--nav .nav-toggler.active .l1{
+        transform: translateY(0) rotate(135deg);
+    }
+    .container--nav .nav-toggler.active .l2{
+        opacity: 0;
+    }
+    .container--nav .nav-toggler.active .l3{
+        transform: translateY(0) rotate(-135deg);
+    }
+    .container--nav .l3{
+        transform: translateY(10px);
+    }
+    @media screen and (max-width: 1050px){
+        .container--nav nav a{
+            font-size: 1rem;
+            padding: 0 10px;
+        }
+        .container--nav nav .edenLogo{
+            font-size: 1.7rem;
+        }
+        .container--nav .account--icon img, .container--nav .cart--icon img{
+            width: 85%;
+            height: 85%;
+        }
+        .container--nav .account--icon{
+            right: 10px;
+        }
+        .container--nav .cart--icon{
+            right: 60px;
+        }
+        .container--nav .search{
+            height: 20px;
+            width: 250px;
+        }
+        .container--nav .search--icon{
+            left: 210px;
+            top: 42px;
+        }
+        .container--nav .search--feature{
+            right: 160px;
+            top: 14px;
+        }
+    }
+    @media screen and (max-width: 850px) {
+        .container--nav .nav-toggler{
+            display: block;
+        }
+        .container--nav nav a{
+            display: none;
+        }
+    }
+              /* ENTÊTE */ 
             
 .slogan{
     font-family: 'Cormorant SC', serif;
@@ -278,7 +319,7 @@ body{
     align-items: center;
     background: transparent;
     position: relative;
-    top: 20px;
+    top: 75px;
 }
 .lines{
     position: absolute;
@@ -297,8 +338,8 @@ body{
     font-weight: 400;
     font-style: italic;
     position: relative;
-    top: -30px;
-    left: 70px;
+    top: 30px;
+    left: 75px;
 }
 .filter-toggler-icon.activeFilter .l4{
     transform: translateY(0) rotate(135deg);

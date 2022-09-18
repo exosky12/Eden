@@ -20,42 +20,45 @@
     <title>Produits - EdenShop</title>
 </head>
 <body>
+    
+
     <div class="container--nav">
-        <a class="slide-line h1" href="index.html">Eden Shop</a>
+
+        <nav>
+            <a href="index.html" class="edenLogo">Eden</a>
+            <a href="index.html">Accueil</a>
+            <a href="products.html" target="_parent">Produits</a>
+            <a href="">Favoris</a>
+            <a class="becomeMember" href="auth.html" target="_parent">Devenir membre</a>
+        </nav>
 
         <div class="search--feature">
             <img class="search--icon" src="assets/search-icon.png" alt="icone de recherche">
-            <input type="search" placeholder="Rechercher">
+            <input class="search" id="searchinput" type="text" placeholder="Rechercher">
         </div>
 
-        <div class="right--side--icon">
-            <button><img class="account--icon" src="assets/account-icon.png" alt="icone de compte"></button>
-            <button><img class="cart--icon" src="assets/cart-icon.png" alt="icone de panier"></button>
-            <button class="nav-toggler" type="button" aria-label="toggle curtain navigation">
-                <span class="line l1"></span>
-                <span class="line l2"></span>
-                <span class="line l3"></span>
-            </button>
-        </div>  
-        <nav>
-            <a class="slide-line" href="index.html">Accueil</a>
-            <a class="slide-line" href="products purplefilter yellowfilter greyfilter bluefilter greenfilter brownfilter.html" target="_blank">Produits</a>
-            <a class="slide-line">Homme</a>
-            <a class="slide-line">Femme</a>
-            <a class="slide-line">Vos favoris</a>
-            <a class="slide-line">Meilleures ventes</a>
-            <a class="slide-line">Panier</a>
-            <button class="becomeMember">Devenir membre</button>
-            <button class="connectMenu">Se connecter</button>
+        <a><button class="cart--icon"><img src="assets/cart-icon.png" alt="icone de panier"></button></a>
+        <a class="authIcon" href="auth.html" target="_parent"><button class="account--icon"><img src="assets/account-icon.png" alt="icone de compte"></button></a>
+
+        <button class="nav-toggler" type="button" aria-label="toggle curtain navigation">
+            <span class="line l1"></span>
+            <span class="line l2"></span>
+            <span class="line l3"></span>
+        </button>
+
+        <nav class="navBurger">
+            <a href="index.html" class="edenLogo">Eden</a>
+            <a href="index.html">Accueil</a>
+            <a href="products.html" target="_parent">Produits</a>
+            <a href="">Favoris</a>
+            <a class="becomeMember" href="auth.html" target="_parent">Devenir membre</a>
         </nav>
             
         </ul>
     </div>
 
-<div class="opacityMenuOpened">
     <main>
         <section id="entête">
-            <h2 class="slogan">Achetez maintenant, profitez maintenant</h2>
             <a href="index.html" class="fil-ariane-homepage">Accueil > Produits ></a>
         </section>
 
@@ -204,7 +207,5 @@
         </div>
 
     </div></footer>
-</div>
-</div>
 </body>
 </html>

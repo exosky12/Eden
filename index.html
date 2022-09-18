@@ -13,6 +13,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="app.js" defer></script>
     <script src="index.js" defer></script>
@@ -21,42 +24,39 @@
 <body>
 
     <div class="container--nav">
-        <a class="slide-line h1" href="index.html">Eden Shop</a>
 
-        <div class="search--feature">
-            <img class="search--icon" src="assets/search-icon.png" alt="icone de recherche">
-            <input class="search" id="searchinput" type="text" placeholder="Rechercher">
-            <div id="suggestion"></div>
-        </div>
-
-        <div class="right--side--icon">
-            <a href="auth.html" target="_parent"><button><img class="account--icon" src="assets/account-icon.png" alt="icone de compte"></button></a>
-            <button><img class="cart--icon" src="assets/cart-icon.png" alt="icone de panier"></button>
-            <button class="nav-toggler" type="button" aria-label="toggle curtain navigation">
-                <span class="line l1"></span>
-                <span class="line l2"></span>
-                <span class="line l3"></span>
-            </button>
-        </div>  
         <nav>
-            <a class="slide-line" href="index.html">Accueil</a>
-            <a class="slide-line" href="products.html" target="_parent">Produits</a>
-            <a class="slide-line">Homme</a>
-            <a class="slide-line">Femme</a>
-            <a class="slide-line">Vos favoris</a>
-            <a class="slide-line">Meilleures ventes</a>
-            <a class="slide-line">Panier</a>
-            <a href="auth.html" target="_parent"><button class="becomeMember">Devenir membre</button></a>
-            <a href="auth.html" target="_parent"><button class="connectMenu">Se connecter</button></a>
+            <a href="index.html" class="edenLogo">Eden</a>
+            <a href="index.html">Accueil</a>
+            <a href="products.html" target="_parent">Produits</a>
+            <a href="">Favoris</a>
+            <a class="becomeMember" href="auth.html" target="_parent">Devenir membre</a>
+        </nav>
+
+
+
+        <a><button class="cart--icon"><img src="assets/cart-icon.png" alt="icone de panier"></button></a>
+        <a class="authIcon" href="auth.html" target="_parent"><button class="account--icon"><img src="assets/account-icon.png" alt="icone de compte"></button></a>
+
+        <button class="nav-toggler" type="button" aria-label="toggle curtain navigation">
+            <span class="line l1"></span>
+            <span class="line l2"></span>
+            <span class="line l3"></span>
+        </button>
+
+        <nav class="navBurger">
+            <a href="index.html" class="edenLogo">Eden</a>
+            <a href="index.html">Accueil</a>
+            <a href="products.html" target="_parent">Produits</a>
+            <a href="">Favoris</a>
+            <a class="becomeMember" href="auth.html" target="_parent">Devenir membre</a>
         </nav>
             
         </ul>
     </div>
 
-<div class="opacityMenuOpened">
     <main>
         <section id="entête">
-            <h2 class="slogan">Achetez maintenant, profitez maintenant</h2>
             <a href="index.html" class="fil-ariane-homepage">Accueil ></a>
         </section>
 
@@ -142,13 +142,8 @@
 
         <section id="favoris">
             <h2>Vos favoris</h2>
-            <div class="favorites-sneakers">
-                <h3>Vous n'avez pas encore de favoris pour le moment, vistez notre page produits pour en ajouter</h3>
-                <div class="allFavorites">
-                </div>
-            </div>
         </section>
-
+    
         <footer>
 
         <div class="footer">
@@ -172,6 +167,5 @@
 
         </footer>
     </main>
-</div>
 </body>
 </html>

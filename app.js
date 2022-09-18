@@ -1,25 +1,15 @@
 const hamburgerIcon = document.querySelector('.nav-toggler');
-const navigation = document.querySelector('nav');
-const opacityMenuOpened = document.querySelector('.opacityMenuOpened')
+const navigation = document.querySelector('.navBurger');
 
 hamburgerIcon.addEventListener("click", toggleNav);
 
 function toggleNav(){
     hamburgerIcon.classList.toggle('active');
     navigation.classList.toggle('active');
-    opacityMenuOpened.classList.toggle('menuOpened')
 }
 
 
 
-
-
-// Pour visualiser le local storage => F12, onglet "Application", "Local Storage" (colonne de gauche) puis "https://cdpn.io/"
-
-// Ligne 4 à décommenter pour vider le localStorage
-localStorage.clear();
-
-// Tes données/produits (idéalement un fichier .json)
 
 
 const products = [
@@ -64,22 +54,7 @@ const products = [
     { id: 39, name:"Nike Space Hippie 04", price: 134.99, gender: "men", colors: ["green", "grey"]}
 ];
 
-const searchinput = document.getElementById('searchInput');
-const productSection = document.querySelector(".allProducts");
-
-searchinput.addEventListener('keyup', function(){
-    const input = searchinput.value;
-
-    const result = products.filter(item => item.name.toLocaleLowerCase().includes(input.toLocaleLowerCase()));
-
-    let suggestion = '';
-
-    result.forEach(resultItem => 
-        suggestion +=`
-        <div class="suggestion">$(resultItem.name)</div>
-        `
-        )
-})
+const productSection = document.querySelector('.allProducts')
 
 function name_pic(name) {
 
@@ -127,7 +102,6 @@ addToFavoriteIcon.forEach((button) => {
     });
 });
 
-// Ajout aux favoris, au clic sur chaque picto (qui a un attribut "data-product", avec l'id du produit à ajouter)
 const hearts = document.querySelectorAll(".heart-icon");
 
 hearts.forEach((heart) => {
@@ -149,14 +123,9 @@ hearts.forEach((heart) => {
             currentCart.push(productSection);
             window.localStorage.setItem("fav", JSON.stringify(currentCart));
 
-            const favorites = document.querySelector('.allFavorites')
-
-            favorites.innerHTML = `
-            <div class="add-to-favoris">
-                <h2>${parseInt(window.localStorage.getItem('fav'))}</h2
-            <div>
-            `
         }
+        const resultat = localStorage.find(fav => fav === products.id);
+        console.log(resultat);
     });
 });
 

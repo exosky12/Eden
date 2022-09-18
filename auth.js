@@ -1,4 +1,4 @@
-import './styles.css';
+import './auth.css';
 import { 
   hideLoginError, 
   showLoginState, 
