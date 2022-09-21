@@ -356,6 +356,7 @@ body{
 .filter{
     width: 300px;
     height: 115vh;
+    top: 366px;
     z-index: 100;
     margin: 0px -30px;
     position: absolute;

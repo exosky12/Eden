@@ -634,6 +634,14 @@ div.add-to-favoris{
     min-width: 500px;
     color: #000;
 }
+.favorisDiv{
+    height: 300px;
+    width: 300px;
+    background: #000;
+}
+.favorisDiv h5{
+    font-size: 22px;
+}
             /* FOOTER */
 
 .footer{
@@ -678,3 +686,5 @@ div.add-to-favoris{
     left: -4px;
 }
 * { box-sizing:border-box; }
+
+

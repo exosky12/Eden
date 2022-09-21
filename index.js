@@ -1,4 +1,3 @@
-
 const sliderSneakersHomepage = Array.from(document.querySelectorAll(".sneakers-homepage"));
 const nbSlideSneakersHomePage = sliderSneakersHomepage.length;
 const sliderTrackerHomepage = Array.from(document.querySelectorAll(".tracker-homepage"));
@@ -63,3 +62,5 @@ function keyPress(e){
     }
 }
 document.addEventListener('keydown', keyPress);
+
+
