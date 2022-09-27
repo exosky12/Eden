@@ -620,11 +620,6 @@ body{
     height: 500px;
     width: 100%;
 }
-div.add-to-favoris{
-    background: #796B6B;
-    width: 600px;
-    height: 300px;
-}
 #favoris h3{
     display: flex;
     justify-content: center;
@@ -634,13 +629,56 @@ div.add-to-favoris{
     min-width: 500px;
     color: #000;
 }
+.favContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
 .favorisDiv{
-    height: 300px;
-    width: 300px;
-    background: #000;
+    width: 330px;
+    height: 450px;
+    margin: 100px 50px;
+    display: flex;
+    flex-direction: column;
+}
+.heart-icon {
+	width: 43px;
+	height: 37px;
+    background: none;
+}
+.favorisDiv .remove-to-favorite{
+    border: none;
+	fill: red;
+    position: absolute;
+    transform: translate(270px, 15px);
+    cursor: pointer;
+    background: none;
+}
+.heart-icon path {
+	fill: none;
+	stroke-width: 2;
+	stroke: #1b1b1b;
+	fill: red;
+    background: none;
+}
+.favorisDiv img{
+    width: 330px;
+    height: 450px;
 }
 .favorisDiv h5{
-    font-size: 22px;
+    font-size: 28px;
+    position: relative;
+    top: -7px;
+    left: 5px;
+    background: none;
+}
+.favorisDiv h6{
+    font-size: 26px;
+    position: relative;
+    top: -7px;
+    left: 5px;
+    background: none;
 }
             /* FOOTER */
 
@@ -685,6 +723,6 @@ div.add-to-favoris{
     top: 6px;
     left: -4px;
 }
-* { box-sizing:border-box; }
+
 
 

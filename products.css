@@ -302,6 +302,7 @@ body{
 
 .add-to-favorite.clicked .heart-icon path {
 	fill: red;
+    pointer-events: none;
 }
 
 /* FILTER */
