@@ -17,8 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="productPages.css">
-    <script src="app.js" defer></script>
-    <script src="index.js" defer></script>
+    <script src="productsPages.js" defer></script>
     <title>Produits - EdenShop</title>
 </head>
 <body>
@@ -29,13 +28,13 @@
             <a href="index.html" class="edenLogo">Eden</a>
             <a href="index.html">Accueil</a>
             <a href="products.html" target="_parent">Produits</a>
-            <a href="">Favoris</a>
+            <a href="index.html/#favoris">Favoris</a>
             <a class="becomeMember" href="auth.html" target="_parent">Devenir membre</a>
         </nav>
 
 
 
-        <a><button class="cart--icon"><img src="assets/cart-icon.png" alt="icone de panier"></button></a>
+        <a href="cart.html"><button class="cart--icon"><img src="assets/cart-icon.png" alt="icone de panier"></button></a>
         <a class="authIcon" href="auth.html" target="_parent"><button class="account--icon"><img src="assets/account-icon.png" alt="icone de compte"></button></a>
 
         <button class="nav-toggler" type="button" aria-label="toggle curtain navigation">
@@ -48,7 +47,7 @@
             <a href="index.html" class="edenLogo">Eden</a>
             <a href="index.html">Accueil</a>
             <a href="products.html" target="_parent">Produits</a>
-            <a href="">Favoris</a>
+            <a href="index.html/#favoris">Favoris</a>
             <a class="becomeMember" href="auth.html" target="_parent">Devenir membre</a>
         </nav>
             
@@ -56,45 +55,9 @@
     </div>
 
     <main>
-        <h2 class="main--name">Nike Air Force 1</h2> <!-- Nom de la paire -->
-        <div class="images">    <!-- Div avec les 6 images -->
-            <img src="assets/productsPages/img1-1.jpg"> 
-            <img src="assets/productsPages/img1-2.jpg">
-            <img src="assets/productsPages/img1-3.jpg">
-            <img src="assets/productsPages/img1-4.jpg">
-            <img src="assets/productsPages/img1-5.jpg">
-            <img src="assets/productsPages/img1-6.jpg">
+        <div class="productPageContainer">
+            
         </div>
-        <div class="right--div">    <!-- Div avec le nom, la pointure, le prix, les avis ... -->
-
-            <h2 class="secondary--name">Nike Air Force 1</h2>
-            <h3 class="price">129,99 €</h3>
-
-            <select name="pointure" id="pointure--select">
-                <option value="">Selectionnez votre pointure</option>
-                <option value="34">34</option>
-                <option value="35">35</option>
-                <option value="36">36</option>
-                <option value="37">37</option>
-                <option value="38">38</option>
-                <option value="39">39</option>
-                <option value="40">40</option>
-                <option value="41">41</option>
-                <option value="42">42</option>
-                <option value="43">43</option>
-                <option value="44">44</option>
-            </select>
-
-            <h2 class="avis">Avis (47)</h2>
-            <span>5/5 ⭐️⭐️⭐️⭐️⭐️</span>
-
-            <div class="buttons">
-                <button class="add-to-cart">Ajouter au panier</button>
-                <button class="add-to-favorite">Ajouter aux favoris</button>
-            </div>
-
-        </div>
-
     </main>
 
     <footer>

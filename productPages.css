@@ -13,7 +13,9 @@ a{
 body{
   --main-font: 'Poppins', sans-serif;
 }
-
+html{
+    scroll-behavior: smooth;
+  }
         /* NAV */
    
 .container--nav{
