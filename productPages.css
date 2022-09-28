@@ -257,7 +257,9 @@ html{
 * { box-sizing:border-box; }
 
 
-main{
+
+main .productPageContainer{
+    display: flex;
     margin: 100px;
     font-family: 'Open Sans', sans-serif;
     display: flex;
@@ -350,28 +352,25 @@ main .right--div .buttons button:nth-child(2){
     }
 }
 @media screen and (max-width: 750px){
-    main{
-        margin: 100px 0px;
-        justify-content: center;
-        height: 1200px;
+    main .productPageContainer{
+        display: flex;
+        margin: 100px auto;
+        font-family: 'Open Sans', sans-serif;
+        transform: translateX(15%);
     }
     main .images{
-        left: 80px;
-        right: 0;
+        margin: 80px 0;
     }
     main .main--name{
         position: relative;
-        left: 250px;
     }
     main .right--div{
         position: relative;
-        top: 3400px;
+        top: 3250px;
         display: flex;
-        align-items: center;
-        right: 0;
-        left: -300px;
         width: 340px;
         min-width: 340px;
+        transform: translateX(-390px);
     }
     main .right--div .buttons button{
         height: 60px;
@@ -382,5 +381,8 @@ main .right--div .buttons button:nth-child(2){
     }
     .footer{
         top: 2800px;
+    }
+    .container--nav{
+        width: 100%;
     }
 }
