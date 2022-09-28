@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion - EdenShop</title>
+  <link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+
+  
+  <div id="login">
+    <div class="header">
+      <h1>Connexion au EdenShop</h1>
+    </div>
+    <form>
+      <div class="group">
+        <input id="txtEmail" type="email">
+        <label>Email</label>
+      </div>
+      <div class="group">
+        <input id="txtPassword" type="password">
+        <label>Password</label>
+      </div>
+      <button onclick="connexion()" id="btnLogin" type="button" class="button buttonBlue">Se connecter</button>
+    </form>
+  </div>
+
+  <a class="backHome" href="index.html">Revenir à l'accueil</a>
+
+
+
+</body>
+
+<!--initialisation du sdk ded firebase (pour le back end)-->
+
+<script type="module" src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js"></script>
+<script type="module" src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"></script>
+<script type="module" src="https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js"></script>
+<script src="auth.js"></script>
+
+</html>

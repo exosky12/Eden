@@ -1,26 +1,5 @@
-import './auth.css';
-import { 
-  hideLoginError, 
-  showLoginState, 
-  showLoginForm, 
-  showApp, 
-  showLoginError, 
-  btnLogin,
-  btnSignup,
-  btnLogout
-} from './ui'
 
-import { initializeApp } from 'firebase/app';
-import { 
-  getAuth,
-  onAuthStateChanged, 
-  signOut,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  connectAuthEmulator
-} from 'firebase/auth';
-
-const firebaseApp = initializeApp({
+const firebaseConfig = {
     apiKey: "AIzaSyB47WzOTwFKG8zYnei1C8jzM6itOey3VLU",
     authDomain: "eden-b8dcd.firebaseapp.com",
     projectId: "eden-b8dcd",
@@ -28,66 +7,120 @@ const firebaseApp = initializeApp({
     messagingSenderId: "758300363638",
     appId: "1:758300363638:web:69c98761c12018ea504857",
     measurementId: "G-QF5V3K3XHH"
-});
+  };
+  
+  firebase.initializeApp(firebaseConfig);
 
-// Login using email/password
-const loginEmailPassword = async () => {
-  const loginEmail = txtEmail.value
-  const loginPassword = txtPassword.value
 
-  // step 1: try doing this w/o error handling, and then add try/catch
-  await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
+//initialisation des variables
+const auth = firebase.auth()
+const database = firebase.database()
 
-  // step 2: add error handling
-  // try {
-  //   await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
-  // }
-  // catch(error) {
-  //   console.log(`There was an error: ${error}`)
-  //   showLoginError(error)
-  // }
-}
 
-// Create new account using email/password
-const createAccount = async () => {
-  const email = txtEmail.value
-  const password = txtPassword.value
+ //configuration fonction inscription
+ function inscription(){
+    email = document.getElementById('txtEmail')
+    password = document.getElementById('txtPassword')
+    nom = document.getElementById('txtNom')
+    premon = document.getElementById('txtPrenom')
+ 
 
-  try {
-    await createUserWithEmailAndPassword(auth, email, password)
-  }
-  catch(error) {
-    console.log(`There was an error: ${error}`)
-    showLoginError(error)
-  } 
-}
+ //message erreur si utilisateur n'as pas bien rempli les forms
+ if (verification_email(txtEmail) == false || (verification_password(txtPassword) == false) ||(verification_field(nom) == false || (verification_field(prenom) == false))){
+    alert('Veuillez rentrez vos informations !')
+    return
+ }
+  if (verification_email(txtEmail) == false || (verification_password(txtPassword) == false)){
+    alert('Email et mot de passe incorect!')
+    return
+ }
+ if (verification_field(nom) == false || (verification_field(prenom) == false)){
+    alert('Veuillez écrire votre nom et votre prénom!')
+    return
+ }
+ if (verification_email(txtEmail) == false){
+    alert('Adresse email incorect !')
+    return
+ }
+ if (verification_password(txtPassword) ==false){
+    alert('Mot de passe doit faire plus de 6 caractères !')
+    return 
+ }
+ if (verification_field(nom) == false){
+    alert('Veuillez entrer votre nom !')
+    return
+ }
+ if (verification_field(prenom) == false){
+    alert('Veuillez entrer votre prénom !')
+    return
+ }
 
-// Monitor auth state
-const monitorAuthState = async () => {
-  onAuthStateChanged(auth, user => {
-    if (user) {
-      console.log(user)
-      showApp()
-      showLoginState(user)
 
-      hideLoginError()
-      hideLinkError()
+
+
+ //verification si l'email est bien construit
+ function verification_email(txtEmail){
+    expression = /^[^@]+@\w+(\.\w+)+\w$/
+    if (expression.test(txtEmail) ==true){
+        //email est bon
+        return true
+    } else{
+        //email mauvais
+        return false
     }
-    else {
-      showLoginForm()
-      lblAuthState.innerHTML = `You're not logged in.`
+
+ }
+
+ //verification si mdp fait plus de 6 caractères car firebase le demande
+ function verification_password(txtPassword){
+    if (password < 6){
+        return false
+    } else {
+        return true
     }
-  })
+ }
+
+ //verification si les forms sont pas vides
+ function verification_field(field){
+    if (field == nul){
+        return false
+    }
+
+    if (field.length <= 0){
+        return false
+    } else {
+        return true
+    }
+
+ }
 }
 
-// Log out
-const logout = async () => {
-  await signOut(auth);
-}
+//Authentification
+auth.createUserWithEmailAndPassword(txtEmail,txtPassword)
+.then(function(){
 
-btnLogin.addEventListener("click", loginEmailPassword) 
-btnSignup.addEventListener("click", createAccount)
-btnLogout.addEventListener("click", logout)
+    //ajout de user sur Firebase Database
+    let user = auth.currentUser
+    //creation de données utilisateurs
+    let database_ref = database.ref()
+    let user_data = {
+        email: txtEmail,
+        nom: txtNom,
+        prenom: tktPrenom,
+        lastlogin: Date.now()
+    }
 
-const auth = getAuth(firebaseApp);
-monitorAuthState();
+    database_ref.child('users:' + user.uid).set(user_data)
+
+})
+
+.catch(function(error){
+//Firebase alert
+    let error_code = error.code 
+    let error_message = error.message
+
+    alert(error_message)
+})
+   
+
+
