@@ -103,14 +103,14 @@ const products = [
   {
     id: 14,
     name: "Nike Fontanka Waffle",
-    price: 54.87,
+    price: 99.99,
     gender: "women",
     colors: ["white", "grey", "black"],
   },
   {
     id: 15,
     name: "Nike Retro GTS",
-    price: 39.97,
+    price: 64.99,
     gender: "men",
     colors: ["white", "black"],
   },

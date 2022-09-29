@@ -33,7 +33,7 @@ newCard.innerHTML = `
     <div class="right--div">    
 
             <h2 class="secondary--name">${name}</h2>
-            <h3 class="price">${price}</h3>
+            <h3 class="price">${price} €</h3>
 
             <select name="pointure" id="pointure--select">
                 <option value="">Selectionnez votre pointure</option>
