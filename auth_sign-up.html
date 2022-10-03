@@ -1,53 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inscription - EdenShop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="auth.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Connexion - EdenShop</title>
-  <link rel="stylesheet" href="auth.css">
-</head>
-
-<body>
-
-  
-  <div id="login">
-    <div class="header">
-      <h1>Connexion au EdenShop</h1>
+  <body>
+    <div class="success-register">
+      <div class="small-success-register alert-account"></div>
+      <h2>enregistrement réussie</h2>
     </div>
-    <form>
-    <div class="group">
-        <input id="txtPrenom" type="prenom">
-        <label>Prénom</label>
+    <div class="error-register">
+      <div class="small-error-register alert-account"></div>
+      <h2>enregistrement échouée</h2>
+    </div>
+
+    <div id="login">
+      <div class="header">
+        <h1>Inscription au EdenShop</h1>
       </div>
-      <div class="group">
-        <input id="txtNom" type="nom">
-        <label>Nom</label>
-      </div>
-      <div class="group">
-        <input id="txtEmail" type="email">
-        <label>Email</label>
-      </div>
-      <div class="group">
-        <input id="txtPassword" type="password">
-        <label>Password</label>
-      </div>
-      <button onclick="inscription()" id="btnSignup" type="button" class="button buttonBlue">S'inscrire</button>
-    </form>
-  </div>
+      <form>
+        <div class="group">
+          <input id="txtEmail" type="email" required />
+          <label>Email</label>
+        </div>
+        <div class="group">
+          <input id="txtPassword" type="password" required />
+          <label>Mot de passe</label>
+        </div>
+        <button id="btnSignup" type="button" class="button buttonBlue">
+          S'inscrire
+        </button>
+      </form>
+    </div>
 
-  <a class="backHome" href="index.html">Revenir à l'accueil</a>
+    <a class="backHome" href="index.html">Revenir à l'accueil</a>
+  </body>
 
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,
+      signInWithEmailAndPassword,
+      signOut,
+    } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+    import {
+      getDatabase,
+      set,
+      ref,
+      update,
+    } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
 
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
 
-</body>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyC8CAoFGcY3TF6BypvI7XJwzOZHD4FbDXA",
+      authDomain: "eden-ac4ac.firebaseapp.com",
+      databaseURL:
+        "https://eden-ac4ac-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "eden-ac4ac",
+      storageBucket: "eden-ac4ac.appspot.com",
+      messagingSenderId: "760106795907",
+      appId: "1:760106795907:web:677c5f06447566f66fecb6",
+    };
 
-<!--initialisation du sdk ded firebase (pour le back end)-->
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+    const database = getDatabase(app);
 
-<script type="module" src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js"></script>
-<script type="module" src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"></script>
-<script type="module" src="https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js"></script>
-<script src="auth.js"></script>
+    btnSignup.addEventListener("click", (e) => {
+      var email = document.getElementById("txtEmail").value;
+      var password = document.getElementById("txtPassword").value;
 
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          // ... user.uid
+          set(ref(database, "users/" + user.uid), {
+            email: email,
+            password: password,
+          })
+            .then(() => {
+              // Data saved successfully!
+              alert("user created successfully");
+            })
+            .catch((error) => {
+              // The write failed...
+              alert(error);
+            });
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // ..
+          alert(errorMessage);
+        });
+    });
+  </script>
 </html>

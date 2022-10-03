@@ -19,7 +19,7 @@ html{
         /* NAV */
    
 .container--nav{
-    width: 100vw;
+    width: 100%;
     height: 100px;
     background: #d6d5d5;
     top: -37px;
@@ -59,13 +59,17 @@ html{
     height: 45px;
     background: none;
     position: absolute;
+    right: 10px;
     margin-top: 49px;
-    right: 20px;
     z-index: 1000;
 }
 .container--nav .account--icon img{
     width: 100%;
     height: 100%;
+}
+.container--nav .rightside-nav{
+    position: absolute;
+    right: 60px;
 }
 .container--nav .cart--icon{
     width: 42px;
@@ -73,7 +77,6 @@ html{
     background: none;
     position: absolute;
     margin-top: 50px;
-    right: 80px;
     z-index: 1000;
 }
 .container--nav .cart--icon img{
@@ -242,7 +245,11 @@ html{
 
 
 #slider-sneakers-homepage{
-    margin: 200px auto;
+    margin-top: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    text-align: center;
     width: 650px;
     height: 300px;
     object-fit: none;
@@ -261,27 +268,25 @@ html{
     height: 100%;
     animation: switchSlide 0.5s ease-in-out;
 }
-.arrow{
-    position: relative;
-    top: -320px;
-    background: none;
-}
+
 .back, .next{
     width: 200px;
     height: 200px;
     opacity: 1;
     display: block;
     cursor: pointer;
+    background: none;
 }
-.next{
+.arrows-sneakers-homepage{
+    display: flex;
+    justify-content: space-between;
+    width: 850px;
     position: relative;
-    left: 550px;
-    top: -520px;
+    left: -100px;
+    top: -400px;
+    background: none;
 }
-.back{
-    position: relative;
-    left: -120px;
-}
+
 .tracker-sneakers-homepage div{
     width: 30px;
     height: 30px;
@@ -345,39 +350,26 @@ html{
 
 .membres{
     width: 100vw;
-    height: 85px;
+    height: 75px;
     background: #C8C8C8;
     position: relative;
-    top: 200px;
+    top: 420px;
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin: 0 auto;
 }
 .membres p{
     font-family: var(--main-font);
     font-size: 16px;
     background: none;
     position: relative;
-    top: -20px;
+    top: 0px;
 }
 .membres p span{
     font-weight: bold;
     background: none;
     text-decoration: underline;
-}
-.membres a{
-    font-size: 14px;
-    font-weight: bold;
-    background: none;
-    font-family: var(--main-font);
-    position: relative;
-    top: 20px;
-    left: -355px;
-    text-decoration: underline;
-    cursor: pointer;
-    width: 100px;
 }
 
 
@@ -406,19 +398,16 @@ html{
     font-size: 18px;
 }
 .image-dernieres-sorties{
-    width: 500px;
-    height: 600px;
+    width: 400px;
+    height: 500px;
 }
 .dernieres-sorties1{
-    margin: 0 auto;
+    margin: 50px auto;
     display: flex;
     justify-content: center;
 }
 .dernieres-sorties2{
-    height: 500px;
-    width: 523px;
     position: relative;
-    left: -9px;
     margin: 40px auto;
     display: flex;
     justify-content: center;
@@ -459,11 +448,7 @@ html{
     font-weight: 500;
     color: #000;
 }
-#exclu-membre span{
-    font-weight: 600;
-    text-decoration: underline;
-    margin-left: 6px;
-}
+
 #exclu-membre img{
     width: 400px;
     height: 500px;
@@ -574,12 +559,11 @@ html{
     font-size: 18px;
 }
 #bientot--disponible img{
-    width: 600px;
-    height: 350px;
     display: block;
     margin: 30px auto;
     position: relative;
-    left: -30px;
+    width: 500px;
+    height: 600px;
 }
 #bientot--disponible .p1, #bientot--disponible .p2{
     font-size: 20px;
@@ -727,4 +711,48 @@ html{
 }
 
 
-
+@media screen and (max-width: 1000px){
+    #slider-sneakers-homepage{
+        width: 400px;
+        margin-bottom: -200px;
+    }
+    #dernieres--sorties{
+        margin: 500px 50px 0px 50px;
+    }
+    .arrows-sneakers-homepage{
+        width: 530px;
+        left: -65px;
+        top: -300px;
+        background: none;
+    }
+    .back, .next{
+        width: 150px;
+        height: 150px;
+    }
+    #club--membre{
+        margin: 0;
+    }
+    #bientot--disponible{
+        margin: 0;
+    }
+    #favoris{
+        margin: 100px 0;
+    }
+    .favContainer{
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 600px){
+    #dernieres--sorties{
+        margin: 500px 50px 0px 50px;
+    }
+}
+@media screen and (max-width: 400px){
+    #club--membre .membre--banner{
+        height: 700px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+}

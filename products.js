@@ -6,7 +6,7 @@ products.forEach((product) => {
   let newCard = document.createElement("div");
   newCard.classList.add("product-card");
   newCard.innerHTML = `
-    <a data-id="${id}" class="mainImg" href="productPages.html?${id}"><img src="./assets/products/${id}_${name_pic(
+    <a data-id="${id}" class="mainImg" href="/productPages.html?${id}"><img src="./assets/products/${id}_${name_pic(
     name
   )}.jpg" alt=${name}></a>
     <button class="add-to-favorite">
