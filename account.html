@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compte - EdenShop</title>
+  </head>
+  <body>
+    <div class="container"></div>
+  </body>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js">
+        const firebase = require("firebase");
+    // Required for side-effects
+    require("firebase/firestore");
+  </script>
+  <script type="module">
+    const firebaseConfig = {
+      apiKey: "AIzaSyC8CAoFGcY3TF6BypvI7XJwzOZHD4FbDXA",
+      authDomain: "eden-ac4ac.firebaseapp.com",
+      databaseURL:
+        "https://eden-ac4ac-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "eden-ac4ac",
+      storageBucket: "eden-ac4ac.appspot.com",
+      messagingSenderId: "760106795907",
+      appId: "1:760106795907:web:677c5f06447566f66fecb6",
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    const db = firebase.firestore();
+    const user = firebase.auth().currentUser;
+
+    // auth.onAuthStateChanged(function (user) {
+    //   if (user) {
+    //     const uid = user.uid;
+    //     const displayName = user.displayName;
+    //     const email = user.email;
+    //     const password = user.password;
+    //     console.log(uid, displayName, email, password);
+    //     const container = document.querySelector(".container");
+    //     container.innerHTML = `
+    //         <h2>${uid}</h2>
+    //         <h2>${displayName}</h2>
+    //         <h2>${email}</h2>
+    //         <h2>${password}</h2>
+    //         `;
+    //   } else {
+    //     console.log("not loged");
+    //   }
+    // });
+  </script>
+</html>
