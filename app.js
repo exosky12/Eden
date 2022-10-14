@@ -302,3 +302,41 @@ function name_product(name2) {
 
   return name2;
 }
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+import {
+  getAuth,
+  onAuthStateChanged,
+} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyC8CAoFGcY3TF6BypvI7XJwzOZHD4FbDXA",
+  authDomain: "eden-ac4ac.firebaseapp.com",
+  databaseURL:
+    "https://eden-ac4ac-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "eden-ac4ac",
+  storageBucket: "eden-ac4ac.appspot.com",
+  messagingSenderId: "760106795907",
+  appId: "1:760106795907:web:677c5f06447566f66fecb6",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+const navAccount = document.querySelector(".rightside-nav");
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    navAccount.innerHTML = `
+    <a class="authIcon" href="account.html" target="_parent"><button class="account--icon"><img src="assets/account-icon.png" alt="icone de compte"></button></a>
+    <a href="cart.html"><button class="cart--icon"><img src="assets/cart-icon.png" alt="icone de panier"></button></a>
+    `;
+  } else {
+    // User is signed out
+    navAccount.innerHTML = `
+    <a class="authIcon" href="auth_sign-in.html" target="_parent"><button class="account--icon"><img src="assets/account-icon.png" alt="icone de compte"></button></a>
+    <a href="cart.html"><button class="cart--icon"><img src="assets/cart-icon.png" alt="icone de panier"></button></a>
+    `;
+  }
+});

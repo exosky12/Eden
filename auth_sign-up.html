@@ -52,66 +52,7 @@
       <a href="auth_sign-in.html">cliquez ici pour en vous connecter</a>
     </div>
     <a class="backHome" href="index.html">Revenir à l'accueil</a>
+
+    <script type="module" src="sign-up.js"></script>
   </body>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js">
-        const firebase = require("firebase");
-    // Required for side-effects
-    require("firebase/firestore");
-  </script>
-  <script type="module">
-    const firebaseConfig = {
-      apiKey: "AIzaSyC8CAoFGcY3TF6BypvI7XJwzOZHD4FbDXA",
-      authDomain: "eden-ac4ac.firebaseapp.com",
-      databaseURL:
-        "https://eden-ac4ac-default-rtdb.europe-west1.firebasedatabase.app",
-      projectId: "eden-ac4ac",
-      storageBucket: "eden-ac4ac.appspot.com",
-      messagingSenderId: "760106795907",
-      appId: "1:760106795907:web:677c5f06447566f66fecb6",
-    };
-
-    firebase.initializeApp(firebaseConfig);
-
-    const db = firebase.firestore();
-
-    const displayName = document.getElementById("txtName");
-    const email = document.getElementById("txtEmail");
-    const password = document.getElementById("txtPassword");
-
-    btnSignup.addEventListener("click", (e) => {
-      db.collection("users")
-        .add({
-          name: `${displayName.value}`,
-          email: `${email.value}`,
-          password: `${password.value}`,
-        })
-        .then((docRef) => {
-          const container = document.querySelector("body");
-          const alerts = document.querySelector(".success-register");
-          alerts.classList.remove("hide");
-          alerts.classList.add("showAlert");
-          setTimeout(() => {
-            alerts.classList.remove("showAlert");
-            alerts.classList.add("hide");
-            window.location.href = "http://127.0.0.1:5500/auth_sign-in.html?";
-          }, 3500);
-        })
-        .catch((error) => {
-          console.error("Error adding document: ", error);
-          const container = document.querySelector("body");
-          const alerts = document.querySelector(".error-register");
-          alerts.classList.remove("hide");
-          alerts.classList.add("showAlert");
-          setTimeout(() => {
-            alerts.classList.remove("showAlert");
-            alerts.classList.add("hide");
-          }, 3500);
-
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          alert(errorMessage);
-        });
-    });
-  </script>
 </html>

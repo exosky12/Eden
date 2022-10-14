@@ -4,51 +4,66 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="account.css" />
     <title>Compte - EdenShop</title>
   </head>
   <body>
+    <div class="container--nav">
+      <nav>
+        <a href="index.html" class="edenLogo">Eden</a>
+        <a href="index.html">Accueil</a>
+        <a href="products.html" target="_parent">Produits</a>
+        <a href="#favoris">Favoris</a>
+        <a class="becomeMember" href="auth_sign-in.html" target="_parent"
+          >Devenir membre</a
+        >
+      </nav>
+
+      <div class="rightside-nav">
+        <a href="cart.html"
+          ><button class="cart--icon">
+            <img src="assets/cart-icon.png" alt="icone de panier" /></button
+        ></a>
+        <a class="authIcon" href="auth_sign-in.html" target="_parent"
+          ><button class="account--icon">
+            <img src="assets/account-icon.png" alt="icone de compte" /></button
+        ></a>
+      </div>
+
+      <button
+        class="nav-toggler"
+        type="button"
+        aria-label="toggle curtain navigation"
+      >
+        <span class="line l1"></span>
+        <span class="line l2"></span>
+        <span class="line l3"></span>
+      </button>
+
+      <nav class="navBurger">
+        <a href="index.html" class="edenLogo">Eden</a>
+        <a href="index.html">Accueil</a>
+        <a href="products.html" target="_parent">Produits</a>
+        <a href="#favoris">Favoris</a>
+        <a class="becomeMember" href="auth_sign-in.html" target="_parent"
+          >Devenir membre</a
+        >
+      </nav>
+    </div>
+
     <div class="container"></div>
+
+    <script type="module" src="account.js"></script>
   </body>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js">
-        const firebase = require("firebase");
-    // Required for side-effects
-    require("firebase/firestore");
-  </script>
-  <script type="module">
-    const firebaseConfig = {
-      apiKey: "AIzaSyC8CAoFGcY3TF6BypvI7XJwzOZHD4FbDXA",
-      authDomain: "eden-ac4ac.firebaseapp.com",
-      databaseURL:
-        "https://eden-ac4ac-default-rtdb.europe-west1.firebasedatabase.app",
-      projectId: "eden-ac4ac",
-      storageBucket: "eden-ac4ac.appspot.com",
-      messagingSenderId: "760106795907",
-      appId: "1:760106795907:web:677c5f06447566f66fecb6",
-    };
-
-    firebase.initializeApp(firebaseConfig);
-
-    const db = firebase.firestore();
-    const user = firebase.auth().currentUser;
-
-    // auth.onAuthStateChanged(function (user) {
-    //   if (user) {
-    //     const uid = user.uid;
-    //     const displayName = user.displayName;
-    //     const email = user.email;
-    //     const password = user.password;
-    //     console.log(uid, displayName, email, password);
-    //     const container = document.querySelector(".container");
-    //     container.innerHTML = `
-    //         <h2>${uid}</h2>
-    //         <h2>${displayName}</h2>
-    //         <h2>${email}</h2>
-    //         <h2>${password}</h2>
-    //         `;
-    //   } else {
-    //     console.log("not loged");
-    //   }
-    // });
-  </script>
 </html>

@@ -1,0 +1,375 @@
+/* GÉNÉRAL */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+body {
+  --main-font: "Poppins", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+/* NAV */
+
+.container--nav {
+  width: 100%;
+  height: 100px;
+  background: #d6d5d5;
+  top: -37px;
+  position: fixed;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+}
+.container--nav .search--feature {
+  background: none;
+  width: 200px;
+  top: 15px;
+  position: absolute;
+  right: 250px;
+}
+.container--nav .search--icon {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 42px;
+  left: 260px;
+  z-index: 10;
+}
+.container--nav input {
+  width: 300px;
+  height: 40px;
+  z-index: 1;
+  padding: 20px;
+  border-radius: 5px;
+}
+.container--nav input::placeholder {
+  position: relative;
+  font-style: italic;
+}
+.container--nav .account--icon {
+  width: 45px;
+  height: 45px;
+  background: none;
+  position: absolute;
+  right: 10px;
+  margin-top: 49px;
+  z-index: 1000;
+}
+.container--nav .account--icon img {
+  width: 100%;
+  height: 100%;
+}
+.container--nav .rightside-nav {
+  position: absolute;
+  right: 60px;
+}
+.container--nav .cart--icon {
+  width: 42px;
+  height: 42px;
+  background: none;
+  position: absolute;
+  margin-top: 50px;
+  z-index: 1000;
+}
+.container--nav .cart--icon img {
+  width: 100%;
+  height: 100%;
+}
+.container--nav img {
+  background: none;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.container--nav button {
+  border: none;
+  background: none;
+}
+.container--nav nav {
+  position: fixed;
+  width: 20vw;
+  min-width: 350px;
+  top: 0px;
+  padding: 20px;
+  z-index: 1000;
+  display: flex;
+  background: none;
+}
+.container--nav nav a {
+  font-family: "Open Sans", sans-serif;
+  background: none;
+  padding: 0 20px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #000;
+  width: 200px;
+  cursor: pointer;
+}
+.container--nav nav a:hover {
+  color: #5e5e5e;
+}
+.container--nav nav .edenLogo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-family: "Ibarra Real Nova", serif;
+  position: relative;
+  top: -8px;
+}
+.navBurger {
+  width: 20vw;
+  min-width: 250px;
+  height: 100vh;
+  padding: 10px;
+  margin-top: 63px;
+  left: -700px;
+  z-index: 1000;
+  border-right: 0.5px solid #1b1b1b;
+  border-top: 0.5px solid #1b1b1b;
+  transition: left 0.5s cubic-bezier(0.5, 0.11, 0.67, 0.84);
+}
+.navBurger.active {
+  left: 0;
+  display: block;
+  background-color: #d6d5d5;
+  width: 30vw;
+  min-width: 270px;
+}
+.navBurger a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.navBurger.active a {
+  display: flex;
+  padding: 15px 0;
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
+}
+.container--nav nav .becomeMember {
+  flex: 0 0 auto;
+}
+.container--nav .nav-toggler {
+  position: fixed;
+  z-index: 1000;
+  top: 8px;
+  left: 25px;
+  height: 50px;
+  width: 30px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  display: none;
+}
+.container--nav .line {
+  position: absolute;
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #000;
+  transition: transform 0.3s ease-out, opacity 0.1s ease-out;
+}
+.navBurger.active .edenLogo {
+  font-size: 36px;
+  font-family: "Ibarra Real Nova", serif;
+}
+.container--nav .l1 {
+  transform: translateY(-10px);
+}
+.container--nav .nav-toggler.active .l1 {
+  transform: translateY(0) rotate(135deg);
+}
+.container--nav .nav-toggler.active .l2 {
+  opacity: 0;
+}
+.container--nav .nav-toggler.active .l3 {
+  transform: translateY(0) rotate(-135deg);
+}
+.container--nav .l3 {
+  transform: translateY(10px);
+}
+@media screen and (max-width: 750px) {
+  .container--nav nav a {
+    padding: 0 10px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .container--nav .nav-toggler {
+    display: block;
+  }
+  .container--nav nav a {
+    display: none;
+  }
+}
+/* ACCOUNT */
+
+.container{
+  width: 60vw;
+  min-width: 400px;
+  max-width: 1000px;
+  margin: 150px auto;
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+.container h1{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+.container .container--infos{
+  margin: 40px 0;
+}
+.container .avatar--div1 input[type="file"] {
+  display: none;
+}
+.container .avatar--div1 label{
+  font-size: 22px;
+  width: 300px;
+  height: 50px;
+  padding-top: 12px;
+  background: #796B6B;
+  color: #fff;
+  border-radius: 15px;
+  text-align: center;
+  margin: 30px;
+  cursor: pointer;
+}
+.container .avatar--div1 .img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50px 50px;
+  background: #dbdbdb;
+}
+.container .avatar--div1 .avatar--div2{
+  margin: 30px 0px;
+  display: flex;
+}
+.container hr{
+  width: 100%;
+  color: #1b1b1b;
+  margin-bottom: 10px;
+}
+.container .id--div{
+  margin-bottom: 20px;
+}
+.container .id--div h2{
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+}
+.container .id--div .uid{
+  font-size: 15px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #1b1b1b;
+  border-radius: 5px;
+}
+.container .id--div .uid h3{
+  width: 300px;
+  height: 20px;
+  position: relative;
+  top: 8px;
+  left: 10px;
+}
+.container .name--div{
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.container .name--div label{
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+}
+.container .name--div #accountName{
+  font-size: 18px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #1b1b1b;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+.container .email--div{
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.container .email--div label{
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+}
+.container .email--div #accountEmail{
+  font-size: 18px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #1b1b1b;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+.container .password--div{
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.container .password--div label{
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+}
+.container .password--div #accountPassword{
+  font-size: 18px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #1b1b1b;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+.container .delete--div .delete--infos h2{
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+}
+.container .delete--div .delete--infos h3{
+  font-weight: 500;
+  font-family: 'Raleway', sans-serif;
+  font-size: 22px;
+}
+.delete{
+  background-color: red;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 15px;
+  height: 40px;
+  width: 220px;
+  margin-top: 10px;
+  margin-bottom: -30px;
+}
+.save{
+  background-color: #389839;
+  width: 300px;
+  height: 50px;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 10px;
+}
