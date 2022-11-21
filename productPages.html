@@ -28,9 +28,10 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="productPages.css" />
-    <script type="module" src="app.js" async></script>
-    <script src="productpage.js" defer></script>
+    <link rel="stylesheet" href="css/productPages.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/app.js" async></script>
+    <script src="js/productpage.js" defer></script>
     <title>Produits - EdenShop</title>
   </head>
   <body>
@@ -45,7 +46,21 @@
         >
       </nav>
 
-      <div class="rightside-nav"></div>
+      <div class="rightside-nav">
+        <a href="cart.html"
+          ><button class="cart--icon">
+            <img src="assets/cart-icon.png" alt="icone de panier" /></button
+        ></a>
+        <a class="authIcon" href="auth_sign-in.html" target="_parent"
+          ><button class="account--icon">
+            <img
+              class="logOut"
+              src="assets/account-icon.png"
+              alt="icone de compte"
+            /></button
+        ></a>
+
+    </div>
 
       <button
         class="nav-toggler"
