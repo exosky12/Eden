@@ -346,7 +346,9 @@ newCard.innerHTML = `
             <span>5/5 ⭐️⭐️⭐️⭐️⭐️</span>
 
             <div class="buttons">
-                <button data-id=${id} data-name=${name_product(name)} data-price=${price} class="add-to-cart">Ajouter au panier</button>
+                <button data-id=${id} data-name=${name_product(
+  name
+)} data-price=${price} class="add-to-cart">Ajouter au panier</button>
                 <button data-id=${id} class="add-to-favorite">Ajouter aux favoris</button>
             </div>
 
@@ -383,11 +385,58 @@ addToFavoriteIcon.forEach((heart) => {
   });
 });
 
-const addTocart = document.querySelectorAll(".add-to-cart");
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+import {
+  getAuth,
+  onAuthStateChanged,
+} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+import {
+  getFirestore,
+  setDoc,
+  doc,
+  getDoc
+} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
-addTocart.forEach((cart) => {
-  cart.addEventListener("click", ({ target }) => {
-    
-  });
+const firebaseConfig = {
+  apiKey: "AIzaSyCIeIK2P73AJwoR2Qb2Nac_xJAAn_qUeGA",
+  authDomain: "eden-cdee4.firebaseapp.com",
+  projectId: "eden-cdee4",
+  storageBucket: "eden-cdee4.appspot.com",
+  messagingSenderId: "166124310796",
+  appId: "1:166124310796:web:74391c4bca9e92c3e53929",
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth();
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    const uid = user.uid;
+    const db = getFirestore(app);
+
+    const addTocart = document.querySelector(".add-to-cart");
+
+    addTocart.addEventListener("click", () => {
+      let productBDD = products.find((obj) => obj.id == productId);
+      let idBDD = productBDD.id;
+      let nameBDD = productBDD.name;
+      let priceBDD = productBDD.price;
+      let sizeBDD = document.querySelector("#pointure--select").value;
+      const setProductCart = async () => {
+      const docRef = doc(db, "Users", uid);
+      const docSnap = await getDoc(docRef);
+        await setDoc(doc(db, "Users", `${idBDD}`), {
+          name: nameBDD,
+          price: priceBDD,
+          quantity: "1",
+          size: sizeBDD
+        });
+      };
+      setProductCart()
+    });
+    // ...
+  } else {
+    // User is signed out
+    // ...
+  }
 });
-
