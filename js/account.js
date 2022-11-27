@@ -29,25 +29,10 @@ const auth = getAuth();
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    const logOutSvg = document.querySelector(".account--icon");
-    logOutSvg.innerHTML = `
-          <svg
-            width="55"
-            height="55"
-            viewBox="0 0 60 60"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M40 32.5V27.5H17.5V20L5 30L17.5 40V32.5H40Z" fill="black" />
-            <path
-              d="M50 7.5H27.5C24.7425 7.5 22.5 9.7425 22.5 12.5V22.5H27.5V12.5H50V47.5H27.5V37.5H22.5V47.5C22.5 50.2575 24.7425 52.5 27.5 52.5H50C52.7575 52.5 55 50.2575 55 47.5V12.5C55 9.7425 52.7575 7.5 50 7.5Z"
-              fill="#333"
-            />
-          </svg>
-          `;
-    logOutSvg.style.top = "-7px";
-    logOutSvg.style.left = "-67px";
-    logOutSvg.style.cursor = "pointer";
+    const logSvg = document.querySelector('.logIcon')
+    logSvg.setAttribute("href", "account.html")
+    const logOutSvg = document.querySelector(".logOutIcon");
+    logOutSvg.style.opacity = "1"
     const auth = getAuth();
     logOutSvg.addEventListener("click", () => {
       signOut(auth)
@@ -147,7 +132,7 @@ onAuthStateChanged(auth, (user) => {
               // ...
             });
           await deleteDoc(doc(db, "Users", uid));
-          window.location.href = "http://localhost:5500/index.html";
+          window.location.href = "http://localhost:5501/index.html";
         });
       });
       const saveModifs = document.querySelector(".save");

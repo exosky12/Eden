@@ -6,7 +6,6 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  background: #fff;
 }
 a {
   text-decoration: none;
@@ -76,7 +75,7 @@ html {
   top: 10px;
 }
 .YesImSure, .NoImNotSure{
-  background-: none;
+  background: none;
   outline: none;
   border: none;
   padding: 10px 20px;
@@ -97,37 +96,60 @@ html {
 .NoImNotSure{
   background-color: red;
 }
-.container--nav .account--icon {
-  width: 45px;
-  height: 45px;
-  background: none;
-  position: absolute;
-  right: 10px;
-  margin-top: 49px;
-  z-index: 1000;
+.container--nav .account--icon{
+    width: 45px;
+    height: 45px;
+    background: none;
+    position: relative;
+    margin-top: 48px;
+    z-index: 1000;
+    cursor: pointer;
+}
+.logIcon{
+    position: relative;
+    background: none;
 }
 .account--icon svg{
+    background: none;
+    cursor: pointer;
+}
+.container--nav .account--icon img{
+    width: 100%;
+    height: 100%;
+    background: none;
+}
+.rightside--nav{
+    position: absolute;
+    right: 30px;
+    background: none;
+}
+.container--nav .cart--icon{
+    width: 42px;
+    z-index: 1000;
+    height: 42px;
+    background: none;
+}
+.logOutIcon{
+    opacity: 0;
+    position: relative;
+    top: 5px;
+    right: 8px;
+    background: none;
+}
+.logOutIcon button{
+    cursor: pointer;
+    background: none;
+}
+.logOutIcon svg{
   background: none;
-}
-.container--nav .account--icon img {
-  width: 100%;
-  height: 100%;
-}
-.container--nav .rightside-nav {
-  position: absolute;
-  right: 60px;
-}
-.container--nav .cart--icon {
-  width: 42px;
-  height: 42px;
-  background: none;
-  position: absolute;
-  margin-top: 50px;
-  z-index: 1000;
 }
 .container--nav .cart--icon img {
   width: 100%;
   height: 100%;
+  background: none;
+}
+.cartIcon button{
+  background: none;
 }
 .container--nav img {
   background: none;

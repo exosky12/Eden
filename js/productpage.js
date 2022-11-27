@@ -297,7 +297,7 @@ const getCurrentURL = () => {
 
 let productUrl = new URL(getCurrentURL());
 productUrl = productUrl.toString();
-productUrl = productUrl.replace("http://localhost:5500/productPages.html?", "");
+productUrl = productUrl.replace("http://localhost:5501/productPages.html?", "");
 let productId = productUrl;
 
 let productInPage = products.find((obj) => obj.id == productId);

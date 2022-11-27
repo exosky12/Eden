@@ -397,6 +397,5 @@ removeFavIcon.forEach((btn) => {
     );
     localFav.splice(itemIndex, 1);
     localStorage.setItem("fav", JSON.stringify(localFav));
-    console.log(localFav);
   });
 });

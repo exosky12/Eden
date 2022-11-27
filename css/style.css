@@ -57,11 +57,13 @@ html{
     width: 45px;
     height: 45px;
     background: none;
-    position: absolute;
-    right: 30px;
-    margin-top: 43px;
+    position: relative;
+    margin-top: 48px;
     z-index: 1000;
     cursor: pointer;
+}
+.authIcon{
+    position: relative;
 }
 .account--icon svg{
     background: none;
@@ -71,17 +73,24 @@ html{
     width: 100%;
     height: 100%;
 }
-.container--nav .rightside-nav{
+.rightside--nav{
     position: absolute;
-    right: 60px;
+    right: 30px;
 }
 .container--nav .cart--icon{
     width: 42px;
     height: 42px;
     background: none;
-    position: absolute;
-    margin-top: 50px;
     z-index: 1000;
+}
+.logOutIcon{
+    opacity: 0;
+    position: relative;
+    top: 5px;
+    right: 8px;
+}
+.logOutIcon button{
+    cursor: pointer;
 }
 .container--nav .cart--icon img{
     width: 100%;

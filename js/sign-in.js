@@ -33,7 +33,7 @@ signIn.addEventListener("click", () => {
         // In memory persistence will be applied to the signed in Google user
         // even though the persistence was set to 'none' and a page redirect
         // occurred.
-        window.location.href = "http://localhost:5500/account.html?";
+        window.location.href = "http://localhost:5501/account.html?";
         return signInWithRedirect(auth, provider);
       })
       .catch((error) => {
