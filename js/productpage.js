@@ -394,7 +394,10 @@ import {
   getFirestore,
   setDoc,
   doc,
-  getDoc
+  updateDoc,
+  addDoc,
+  collection,
+  getDoc,
 } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -423,16 +426,30 @@ onAuthStateChanged(auth, (user) => {
       let priceBDD = productBDD.price;
       let sizeBDD = document.querySelector("#pointure--select").value;
       const setProductCart = async () => {
-      const docRef = doc(db, "Users", uid);
-      const docSnap = await getDoc(docRef);
-        await setDoc(doc(db, "Users", `${idBDD}`), {
-          name: nameBDD,
-          price: priceBDD,
-          quantity: "1",
-          size: sizeBDD
+        const uidRef = doc(db, "Users", uid);
+        const docSnap = await getDoc(uidRef);
+        let UserName = docSnap.data().name;
+        const UserEmail = docSnap.data().email;
+        const UserPsw = docSnap.data().password;
+
+        await updateDoc(uidRef, {
+          [idBDD]: {
+            name: nameBDD,
+            price: priceBDD,
+            quantity: "1",
+            size: sizeBDD,
+          },
         });
+        // await updateDoc(cartRef, {
+        //   [idBDD]: {
+        //     name: nameBDD,
+        //     price: priceBDD,
+        //     quantity: "1",
+        //     size: sizeBDD,
+        //   },
+        // });
       };
-      setProductCart()
+      setProductCart();
     });
     // ...
   } else {
@@ -440,3 +457,4 @@ onAuthStateChanged(auth, (user) => {
     // ...
   }
 });
+

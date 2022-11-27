@@ -49,7 +49,7 @@ signUp.addEventListener("click", () => {
       }
       setTimeout(() => {
         window.location.href = "http://localhost:5501/index.html";
-      }, 2500);
+      }, 500);
       // Regarder Eden et faire UI design des alerts
     })
     .catch((error) => {

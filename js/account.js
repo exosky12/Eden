@@ -50,11 +50,6 @@ onAuthStateChanged(auth, (user) => {
       const docRef = doc(db, "Users", uid);
       const docSnap = await getDoc(docRef);
 
-      if (docSnap.exists()) {
-      } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-      }
       let UserName = docSnap.data().name;
       if (UserName === "") {
         UserName = "Anonyme";
