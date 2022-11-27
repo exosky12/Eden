@@ -476,9 +476,6 @@ onAuthStateChanged(auth, (user) => {
             />
           </svg>
           `;
-    // logOutSvg.style.top = "-7px";
-    // logOutSvg.style.left = "-67px";
-    // logOutSvg.style.cursor = "pointer";
     const auth = getAuth();
     logOutSvg.addEventListener("click", () => {
       signOut(auth)

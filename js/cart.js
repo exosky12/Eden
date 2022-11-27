@@ -305,11 +305,12 @@ function findProductById(id) {
 
 function addToCart({ id, name, price }) {
   let newCart = document.createElement("div");
+  newCart.classList.add('cartCard')
   newCart.innerHTML = `
   <a data-id="${id}" class="mainImg" href="/productPages.html?${id}"><img src="./assets/products/${id}_${name_pic(
     name
   )}.jpg" alt=${name}></a>
-    <div>
+    <div class="productInfos">
       <h5>${name}</h5>
       <h6>${price} €</h6>
     </div>`;

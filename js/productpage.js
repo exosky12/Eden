@@ -387,27 +387,7 @@ const addTocart = document.querySelectorAll(".add-to-cart");
 
 addTocart.forEach((cart) => {
   cart.addEventListener("click", ({ target }) => {
-    // On récupère l'ID du produit (depuis l'attribut "data-product")
-    const productSection = target.dataset.id;
-
-    // On lit la clé "fav" du localStorage
-    const cart = window.localStorage.getItem("cart");
-
-    // Si celle-ci n'existe pas, on la créé
-    if (cart === null) {
-      window.localStorage.setItem("cart", JSON.stringify([productSection]));
-    } else {
-      // Si elle existe, on récupère + "parse" la clé "fav" du localStorage ("parse" ~= transforme le localStorage, qui est une chaine JSON, en Javascript)
-      const currentCart = JSON.parse(cart);
-
-      if (currentCart.includes(productSection)) {
-        console.log("Produit déjà dans le panier");
-      } else {
-        // On ajoute l'id du produit au tableau présent en tant que valeur de la clé "fav"
-        currentCart.push(productSection);
-        window.localStorage.setItem("cart", JSON.stringify(currentCart));
-      }
-    }
+    
   });
 });
 

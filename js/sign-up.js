@@ -48,7 +48,7 @@ signUp.addEventListener("click", () => {
         addUserFireStore();
       }
       setTimeout(() => {
-        window.location.href = "http://localhost:5500/auth_sign-in.html";
+        window.location.href = "http://localhost:5500/index.html";
       }, 2500);
       // Regarder Eden et faire UI design des alerts
     })

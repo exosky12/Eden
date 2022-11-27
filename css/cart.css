@@ -123,6 +123,28 @@ html{
     position: relative;
     top: -8px;
 }
+.container--nav .account--icon{
+    width: 45px;
+    height: 45px;
+    background: none;
+    position: absolute;
+    right: 20px;
+    margin-top: 44px;
+    z-index: 10000;
+    cursor: pointer;
+  }
+  .account--icon svg{
+    background: none;
+    z-index: 10000;
+    cursor: pointer;
+    background: none;
+  }
+  .container--nav .account--icon img {
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    background: none;
+  }
 .navBurger{
     width: 20vw;
     min-width: 250px;
@@ -213,4 +235,25 @@ html{
     .container--nav nav a{
         display: none;
     }
+}
+
+
+/* _______________ CARDS _______________ */
+
+.cartContainer{
+    margin: 200px 100px;
+    font-family: var(--main-font);
+    font-size: 38px;
+}
+.cartCard{
+    width: 100%;
+    display: flex;
+    margin: 80px 0px;
+}
+.cartCard img{
+    width: 400px;
+    height: 500px;
+}
+.cartCard .productInfos{
+    margin: -10px 20px;
 }
