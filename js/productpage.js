@@ -440,14 +440,6 @@ onAuthStateChanged(auth, (user) => {
             size: sizeBDD,
           },
         });
-        // await updateDoc(cartRef, {
-        //   [idBDD]: {
-        //     name: nameBDD,
-        //     price: priceBDD,
-        //     quantity: "1",
-        //     size: sizeBDD,
-        //   },
-        // });
       };
       setProductCart();
     });
@@ -457,4 +449,18 @@ onAuthStateChanged(auth, (user) => {
     // ...
   }
 });
-
+const db = getFirestore(app);
+const data = async function () {
+  const docRef = doc(db, "Users", "3n5aV89GKRel6eqE5SG5XAAG3Ks1");
+  const docSnap = await getDoc(docRef);
+  let dataCart = [];
+  for (let el in docSnap.data()) {
+    let checkData = products.find((obj) => obj.id == el);
+    dataCart.push(checkData);
+  }
+  for (let el in dataCart) {
+    console.log(el);
+  }
+  console.log(dataCart);
+};
+data();
