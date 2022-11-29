@@ -357,8 +357,8 @@ onAuthStateChanged(auth, (user) => {
       }
 
       objectsCart.forEach((cartProduct) => {
-        let { id, name, price, size } = cartProduct;
-
+        let { id, name, price, size, quantity} = cartProduct;
+        quantity = 1
         if (size === undefined) {
           size = "Vous n'avez pas sélectionné de pointure";
         }
@@ -369,11 +369,25 @@ onAuthStateChanged(auth, (user) => {
         <a data-id="${id}" class="cartProductImage" href="/productPages.html?${id}"><img src="./assets/products/${id}_${name_pic(
           name
         )}.jpg" alt=${name}></a>
-        <h5>${name}</h5>
-        <h5>${size}</h5>
-        <h6>${price} €</h6>
-        
-        `;
+
+        <div class="cartProductInfos">
+
+          <h5 class="productName">${name}</h5>
+          <h5 class="productSize">${size}</h5>
+          <h6 class="productPrice">${price} €</h6>
+          <div class="modifyQuantity">
+
+            <span class="lessQuantity">-</span>
+            <span class="totalQuantity">${quantity}</span>
+            <span class="moreQuantity">+</span>
+
+          </div>
+
+          <button data-id="${id}" class="deleteFromCartBtn">Supprimer du panier</button>
+
+        </div>
+        `
+        ;
         cartContainer.appendChild(newCartProduct);
       });
     };

@@ -1,326 +1,403 @@
 /* GÉNÉRAL */
 
-*, ::before, ::after{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
-a{
-    text-decoration: none;
-    color: #000;
+a {
+  text-decoration: none;
+  color: #000;
 }
-body{
-  --main-font: 'Poppins', sans-serif;
+body {
+  --main-font: "Poppins", sans-serif;
 }
-html{
+html {
   scroll-behavior: smooth;
 }
-        /* NAV */
-   
-.container--nav{
-    width: 100%;
-    height: 100px;
-    background: #d6d5d5;
-    top: -37px;
-    position: fixed;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
+/* NAV */
+
+.container--nav {
+  width: 100%;
+  height: 100px;
+  background: #d6d5d5;
+  top: -37px;
+  position: fixed;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
 }
-.container--nav .search--feature{
-    background: none;
-    width: 200px;
-    top: 15px;
-    position: absolute;
-    right: 250px;
+.container--nav .search--feature {
+  background: none;
+  width: 200px;
+  top: 15px;
+  position: absolute;
+  right: 250px;
 }
-.container--nav .search--icon{
-    width: 30px;
-    height: 30px;
-    position: relative;
-    top: 42px;
-    left: 260px;
-    z-index: 10;
+.container--nav .search--icon {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 42px;
+  left: 260px;
+  z-index: 10;
 }
-.container--nav input{
-    width: 300px;
-    height: 40px;
-    z-index: 1;
-    padding: 20px;
-    border-radius: 5px;
+.container--nav input {
+  width: 300px;
+  height: 40px;
+  z-index: 1;
+  padding: 20px;
+  border-radius: 5px;
 }
-.container--nav input::placeholder{
-    position: relative;
-    font-style: italic;
-}            
-.container--nav .account--icon{
-    width: 45px;
-    height: 45px;
-    background: none;
-    position: absolute;
-    right: 10px;
-    margin-top: 49px;
-    z-index: 1000;
+.container--nav input::placeholder {
+  position: relative;
+  font-style: italic;
 }
-.container--nav .account--icon img{
-    width: 100%;
-    height: 100%;
+.container--nav .account--icon {
+  width: 45px;
+  height: 45px;
+  background: none;
+  position: absolute;
+  right: 10px;
+  margin-top: 49px;
+  z-index: 1000;
 }
-.container--nav .rightside-nav{
-    position: absolute;
-    right: 60px;
+.container--nav .account--icon img {
+  width: 100%;
+  height: 100%;
 }
-.container--nav .cart--icon{
-    width: 42px;
-    height: 42px;
-    background: none;
-    position: absolute;
-    margin-top: 50px;
-    z-index: 1000;
+.container--nav .rightside-nav {
+  position: absolute;
+  right: 60px;
 }
-.container--nav .cart--icon img{
-    width: 100%;
-    height: 100%;
+.container--nav .cart--icon {
+  width: 42px;
+  height: 42px;
+  background: none;
+  position: absolute;
+  margin-top: 50px;
+  z-index: 1000;
 }
-.container--nav img{
-    background: none;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
+.container--nav .cart--icon img {
+  width: 100%;
+  height: 100%;
 }
-.container--nav button{
-    border: none;
-    background: none;
+.container--nav img {
+  background: none;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
 }
-.container--nav nav{
-    position: fixed;
-    width: 20vw;
-    min-width: 350px;
-    top: 0px;
-    padding: 20px;
-    z-index: 1000;
-    display: flex;
-    background: none;
+.container--nav button {
+  border: none;
+  background: none;
 }
-.container--nav nav a{
-    font-family: 'Open Sans', sans-serif;
-    background: none;
-    padding: 0 20px;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #000;
-    width: 200px;
-    cursor: pointer;
+.container--nav nav {
+  position: fixed;
+  width: 20vw;
+  min-width: 350px;
+  top: 0px;
+  padding: 20px;
+  z-index: 1000;
+  display: flex;
+  background: none;
 }
-.container--nav nav a:hover{
-    color: #5e5e5e;
+.container--nav nav a {
+  font-family: "Open Sans", sans-serif;
+  background: none;
+  padding: 0 20px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #000;
+  width: 200px;
+  cursor: pointer;
 }
-.container--nav nav .edenLogo{
-    font-size: 1.8rem;
-    font-weight: 600;
-    font-family: 'Ibarra Real Nova', serif;
-    position: relative;
-    top: -8px;
+.container--nav nav a:hover {
+  color: #5e5e5e;
 }
-.container--nav .account--icon{
-    width: 45px;
-    height: 45px;
-    background: none;
-    position: absolute;
-    right: 20px;
-    margin-top: 44px;
-    z-index: 10000;
-    cursor: pointer;
-  }
-  .account--icon svg{
-    background: none;
-    z-index: 10000;
-    cursor: pointer;
-    background: none;
-  }
-  .container--nav .account--icon img {
-    width: 100%;
-    height: 100%;
-    z-index: 10000;
-    background: none;
-  }
-.navBurger{
-    width: 20vw;
-    min-width: 250px;
-    height: 100vh;
-    padding: 10px;
-    margin-top: 63px;
-    left: -700px;
-    z-index: 1000;
-    border-right: 0.5px solid #1b1b1b;
-    border-top: 0.5px solid #1b1b1b;
-    transition: left 0.5s cubic-bezier(0.50, 0.11, 0.67, .84);
+.container--nav nav .edenLogo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-family: "Ibarra Real Nova", serif;
+  position: relative;
+  top: -8px;
 }
-.navBurger.active{
-    left: 0;
-    display: block;
-    background-color: #d6d5d5;
-    width: 30vw;
-    min-width: 270px;
+.container--nav .account--icon {
+  width: 45px;
+  height: 45px;
+  background: none;
+  position: absolute;
+  right: 20px;
+  margin-top: 44px;
+  z-index: 10000;
+  cursor: pointer;
 }
-.navBurger a{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.account--icon svg {
+  background: none;
+  z-index: 10000;
+  cursor: pointer;
+  background: none;
 }
-.navBurger.active a{
-    display: flex;
-    padding: 15px 0;
-    font-size: 20px;
-    font-family: 'Open Sans', sans-serif;
+.container--nav .account--icon img {
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  background: none;
 }
-.container--nav nav .becomeMember{
-    flex: 0 0 auto
+.navBurger {
+  width: 20vw;
+  min-width: 250px;
+  height: 100vh;
+  padding: 10px;
+  margin-top: 63px;
+  left: -700px;
+  z-index: 1000;
+  border-right: 0.5px solid #1b1b1b;
+  border-top: 0.5px solid #1b1b1b;
+  transition: left 0.5s cubic-bezier(0.5, 0.11, 0.67, 0.84);
 }
-.container--nav .nav-toggler{
-    position: fixed;
-    z-index: 1000;
-    top: 8px;
-    left: 25px;
-    height: 50px;
-    width: 30px;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: transparent;
-    display: none;
+.navBurger.active {
+  left: 0;
+  display: block;
+  background-color: #d6d5d5;
+  width: 30vw;
+  min-width: 270px;
 }
-.container--nav .line{
-    position: absolute;
-    display: block;
-    height: 2px;
-    width: 100%;
-    background: #000;
-    transition: transform 0.3s ease-out, opacity 0.1s ease-out;
+.navBurger a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-.navBurger.active .edenLogo{
-    font-size: 36px;
-    font-family: 'Ibarra Real Nova', serif;
+.navBurger.active a {
+  display: flex;
+  padding: 15px 0;
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
 }
-.container--nav .l1{
-    transform: translateY(-10px);
+.container--nav nav .becomeMember {
+  flex: 0 0 auto;
 }
-.container--nav .nav-toggler.active .l1{
-    transform: translateY(0) rotate(135deg);
+.container--nav .nav-toggler {
+  position: fixed;
+  z-index: 1000;
+  top: 8px;
+  left: 25px;
+  height: 50px;
+  width: 30px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  display: none;
 }
-.container--nav .nav-toggler.active .l2{
-    opacity: 0;
+.container--nav .line {
+  position: absolute;
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #000;
+  transition: transform 0.3s ease-out, opacity 0.1s ease-out;
 }
-.container--nav .nav-toggler.active .l3{
-    transform: translateY(0) rotate(-135deg);
+.navBurger.active .edenLogo {
+  font-size: 36px;
+  font-family: "Ibarra Real Nova", serif;
 }
-.container--nav .l3{
-    transform: translateY(10px);
+.container--nav .l1 {
+  transform: translateY(-10px);
+}
+.container--nav .nav-toggler.active .l1 {
+  transform: translateY(0) rotate(135deg);
+}
+.container--nav .nav-toggler.active .l2 {
+  opacity: 0;
+}
+.container--nav .nav-toggler.active .l3 {
+  transform: translateY(0) rotate(-135deg);
+}
+.container--nav .l3 {
+  transform: translateY(10px);
 }
 @media screen and (max-width: 750px) {
-    .container--nav nav a{
-        padding: 0 10px;
-    }
+  .container--nav nav a {
+    padding: 0 10px;
+  }
 }
-@media screen and (max-width:650px){
-    .container--nav .nav-toggler{
-        display: block;
-    }
-    .container--nav nav a{
-        display: none;
-    }
+@media screen and (max-width: 650px) {
+  .container--nav .nav-toggler {
+    display: block;
+  }
+  .container--nav nav a {
+    display: none;
+  }
 }
-
 
 /* _______________ CARDS _______________ */
 
-.cartContainer{
-    margin: 200px 100px;
-    font-family: var(--main-font);
-    font-size: 38px;
+.cartContainer {
+  margin: 200px 100px;
+  font-family: var(--main-font);
+  font-size: 38px;
 }
-.cartCard{
-    width: 100%;
-    display: flex;
-    margin: 80px 0px;
+.cartCard {
+  width: 100%;
+  display: flex;
+  margin: 80px 0px;
 }
-.cartCard img{
-    width: 400px;
-    height: 500px;
+.cartCard img {
+  width: 400px;
+  height: 500px;
 }
-.cartCard .productInfos{
-    margin: -10px 20px;
+.cartCard .productInfos {
+  margin: -10px 20px;
 }
 .container--nav .account--icon {
-    width: 45px;
-    height: 45px;
-    background: none;
+  width: 45px;
+  height: 45px;
+  background: none;
+  position: relative;
+  margin-top: 48px;
+  z-index: 1000;
+  cursor: pointer;
+}
+.authIcon {
+  position: relative;
+}
+.account--icon svg {
+  background: none;
+  cursor: pointer;
+}
+.container--nav .account--icon img {
+  width: 100%;
+  height: 100%;
+}
+.rightside--nav {
+  position: absolute;
+  right: 30px;
+}
+.container--nav .cart--icon {
+  width: 42px;
+  height: 42px;
+  background: none;
+  z-index: 1000;
+  position: absolute;
+  top: 50px;
+}
+.logOutIcon button {
+  cursor: pointer;
+}
+.container--nav .cart--icon img {
+  width: 100%;
+  height: 100%;
+}
+.container--nav img {
+  background: none;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.rightside--nav {
+  position: absolute;
+  right: 50px;
+  top: 37px;
+}
+.logIcon {
+  position: absolute;
+  top: -36px;
+  right: 10px;
+  background: none;
+}
+.logOutIcon {
+  opacity: 0;
+  position: absolute;
+  background: none;
+  top: 7px;
+  right: 80px;
+}
+.cartIcon {
+  position: absolute;
+  top: 6px;
+  right: -20px;
+}
+
+/* ___________ CART UI ___________ */
+
+.cartProduct {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 100px;
+}
+.cartProduct img{
+    width: 350px;
+    height: 450px;
+}
+.cartProductInfos {
+  position: relative;
+  left: 10px;
+}
+.productName {
+  font-weight: 600;
+  position: relative;
+  top: -10px;
+}
+.productSize {
+  position: relative;
+  top: -13px;
+  font-weight: 400;
+  font-size: 18px;
+}
+.productPrice {
+  position: relative;
+  top: -10px;
+  font-weight: 500;
+  font-family: Helvetica;
+}
+.modifyQuantity {
+    width: 100px;
+    background-color: #DBDBDB;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.modifyQuantity span{
     position: relative;
-    margin-top: 48px;
-    z-index: 1000;
+    font-size: 30px;
+}
+.modifyQuantity span:nth-child(1){
+    left: 13px;
+    font-weight: 100;
+    font-size: 35px;
     cursor: pointer;
-  }
-  .authIcon {
-    position: relative;
-  }
-  .account--icon svg {
-    background: none;
-    cursor: pointer;
-  }
-  .container--nav .account--icon img {
-    width: 100%;
-    height: 100%;
-  }
-  .rightside--nav {
-    position: absolute;
-    right: 30px;
-  }
-  .container--nav .cart--icon {
-    width: 42px;
-    height: 42px;
-    background: none;
-    z-index: 1000;
-    position: absolute;
-    top: 50px;
-  }
-  .logOutIcon button {
-    cursor: pointer;
-  }
-  .container--nav .cart--icon img {
-    width: 100%;
-    height: 100%;
-  }
-  .container--nav img {
-    background: none;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-  }
-  .rightside--nav {
-    position: absolute;
-    right: 50px;
-    top: 37px;
-  }
-  .logIcon {
-    position: absolute;
-    top: -36px;
+}
+.modifyQuantity span:nth-child(2){
+    top: 5px;
+}
+.modifyQuantity span:nth-child(3){
     right: 10px;
-    background: none;
-  }
-  .logOutIcon {
-    opacity: 0;
+    font-weight: 100;
+    font-size: 35px;
+    cursor: pointer;
+}
+.deleteFromCartBtn{
     position: absolute;
+    bottom: 12px;
+    width: 300px;
+    left: -45px;
     background: none;
-    top: 7px;
-    right: 80px;
-  }
-  .cartIcon{
-    position: absolute;
-    top: 6px;
-    right: -20px;
-  }
+    border: none;
+    cursor: pointer;
+    color: rgb(3, 3, 3);
+    font-weight: 100;
+    opacity: 0.8;
+    letter-spacing: 1.4px;
+    text-decoration: underline;
+    font-style: italic;
+    right: 350px;
+    font-size: 20px;
+}
