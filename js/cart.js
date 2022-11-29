@@ -293,27 +293,94 @@ function name_product(name2) {
 
 const cartContainer = document.querySelector(".cartContainer");
 
-const currentCartIds = JSON.parse(window.localStorage.getItem("cart")) ?? [];
-currentCartIds.forEach((id) => {
-  const product = findProductById(id);
-  addToCart(product);
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+import {
+  getAuth,
+  onAuthStateChanged,
+} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+import {
+  getFirestore,
+  setDoc,
+  doc,
+  updateDoc,
+  addDoc,
+  collection,
+  getDoc,
+} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCIeIK2P73AJwoR2Qb2Nac_xJAAn_qUeGA",
+  authDomain: "eden-cdee4.firebaseapp.com",
+  projectId: "eden-cdee4",
+  storageBucket: "eden-cdee4.appspot.com",
+  messagingSenderId: "166124310796",
+  appId: "1:166124310796:web:74391c4bca9e92c3e53929",
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth();
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    const logSvg = document.querySelector(".logIcon");
+    logSvg.setAttribute("href", "account.html");
+    const logOutSvg = document.querySelector(".logOutIcon");
+    logOutSvg.style.opacity = "1";
+    const auth = getAuth();
+    logOutSvg.addEventListener("click", () => {
+      signOut(auth)
+        .then(() => {
+          // Sign-out successful.
+          window.location.href = "http://localhost:5501/";
+        })
+        .catch((error) => {
+          // An error happened.
+        });
+    });
+    const uid = user.uid;
+    const db = getFirestore(app);
+    const data = async function () {
+      const docRef = doc(db, "Users", uid);
+      const docSnap = await getDoc(docRef);
+      let dataCart = [];
+      let objectsCart = [];
+      let index = 0;
+      for (let el in docSnap.data()) {
+        let checkData = products.find((obj) => obj.id == el);
+        dataCart.push(checkData);
+      }
+      for (let el in dataCart) {
+        if (typeof dataCart[index] === typeof {}) {
+          objectsCart.push(dataCart[index]);
+        }
+        index = index + 1;
+      }
+
+      objectsCart.forEach((cartProduct) => {
+        let { id, name, price, size } = cartProduct;
+
+        if (size === undefined) {
+          size = "Vous n'avez pas sélectionné de pointure";
+        }
+
+        let newCartProduct = document.createElement("div");
+        newCartProduct.classList.add("cartProduct");
+        newCartProduct.innerHTML = `
+        <a data-id="${id}" class="cartProductImage" href="/productPages.html?${id}"><img src="./assets/products/${id}_${name_pic(
+          name
+        )}.jpg" alt=${name}></a>
+        <h5>${name}</h5>
+        <h5>${size}</h5>
+        <h6>${price} €</h6>
+        
+        `;
+        cartContainer.appendChild(newCartProduct);
+      });
+    };
+    data();
+    // ...
+  } else {
+    // User is signed out
+    // ...
+  }
 });
-
-function findProductById(id) {
-  return products.find((p) => p.id == id);
-}
-
-function addToCart({ id, name, price }) {
-  let newCart = document.createElement("div");
-  newCart.classList.add('cartCard')
-  newCart.innerHTML = `
-  <a data-id="${id}" class="mainImg" href="/productPages.html?${id}"><img src="./assets/products/${id}_${name_pic(
-    name
-  )}.jpg" alt=${name}></a>
-    <div class="productInfos">
-      <h5>${name}</h5>
-      <h6>${price} €</h6>
-    </div>`;
-
-  cartContainer.appendChild(newCart);
-}

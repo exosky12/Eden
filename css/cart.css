@@ -4,7 +4,6 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    background: #fff;
 }
 a{
     text-decoration: none;
@@ -257,3 +256,71 @@ html{
 .cartCard .productInfos{
     margin: -10px 20px;
 }
+.container--nav .account--icon {
+    width: 45px;
+    height: 45px;
+    background: none;
+    position: relative;
+    margin-top: 48px;
+    z-index: 1000;
+    cursor: pointer;
+  }
+  .authIcon {
+    position: relative;
+  }
+  .account--icon svg {
+    background: none;
+    cursor: pointer;
+  }
+  .container--nav .account--icon img {
+    width: 100%;
+    height: 100%;
+  }
+  .rightside--nav {
+    position: absolute;
+    right: 30px;
+  }
+  .container--nav .cart--icon {
+    width: 42px;
+    height: 42px;
+    background: none;
+    z-index: 1000;
+    position: absolute;
+    top: 50px;
+  }
+  .logOutIcon button {
+    cursor: pointer;
+  }
+  .container--nav .cart--icon img {
+    width: 100%;
+    height: 100%;
+  }
+  .container--nav img {
+    background: none;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+  .rightside--nav {
+    position: absolute;
+    right: 50px;
+    top: 37px;
+  }
+  .logIcon {
+    position: absolute;
+    top: -36px;
+    right: 10px;
+    background: none;
+  }
+  .logOutIcon {
+    opacity: 0;
+    position: absolute;
+    background: none;
+    top: 7px;
+    right: 80px;
+  }
+  .cartIcon{
+    position: absolute;
+    top: 6px;
+    right: -20px;
+  }
