@@ -11,6 +11,7 @@ a{
 }
 body{
   --main-font: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
 html{
   scroll-behavior: smooth;
@@ -378,6 +379,7 @@ html{
     background: none;
     position: relative;
     top: 0px;
+    width: 85%;
 }
 .membres p span{
     font-weight: bold;
@@ -766,5 +768,64 @@ html{
         align-items: center;
         justify-content: center;
         margin: 0 auto;
+    }
+}
+@media screen and (max-width: 500px){
+    .arrow{
+        width: 125px;
+        height: 125px;
+        position: relative;
+        left: -30px;
+    }
+    .back{
+        position: relative;
+        left: 30px;
+    }
+    .fil-ariane-homepage{
+        margin-left: 0px;
+    }
+    #entête{
+        margin-left: 30px;
+    }
+    #dernieres--sorties{
+        margin-left: 30px;
+    }
+    #dernieres--sorties h3{
+        width: 90%;
+    }
+    .image-dernieres-sorties{
+        width: 330px;
+        object-fit: contain;
+    }
+    #exclu-membre{
+        margin-left: 30px;
+    }
+    .exclu-image-div{
+        position: relative;
+        left: 30px;
+    }
+    .exclu-image-div img{
+        width: 330px !important;
+        object-fit: contain;
+        margin: 0 !important;
+    }
+    #club--membre{
+        margin: 50px 30px 0px 30px;
+        height: 900px;
+    }
+    #club--membre h3{
+        font-size: 22px !important;
+        position: relative;
+        top: -40px !important;
+    }
+    .membre--banner ul li:nth-child(6){
+        width: 90% !important;
+    }
+    .membre--banner p {
+        top: 10px !important;
+        width: 85% !important;
+    }
+    .membre--banner a {
+        top: 30px !important;
     }
 }
