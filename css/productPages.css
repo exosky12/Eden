@@ -13,6 +13,7 @@ a {
 }
 body {
   --main-font: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 html {
   scroll-behavior: smooth;
@@ -423,4 +424,19 @@ main .right--div .buttons button:nth-child(2) {
   position: absolute;
   top: 6px;
   right: -20px;
+}
+@media screen and (max-width: 500px) {
+  .productPageContainer{
+    margin-left: 0px !important;
+    margin-bottom: 90px !important;
+  }
+  .footer{
+    position: relative;
+    top: 350px !important;
+  }
+  .right--div{
+    position: relative;
+    top: 3250px !important;
+    height: 400px !important;
+  }
 }
