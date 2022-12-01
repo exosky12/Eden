@@ -303,9 +303,8 @@ import {
   setDoc,
   doc,
   updateDoc,
-  addDoc,
-  collection,
   getDoc,
+  deleteField,
 } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -357,14 +356,15 @@ onAuthStateChanged(auth, (user) => {
       }
 
       objectsCart.forEach((cartProduct) => {
-        let { id, name, price, size, quantity} = cartProduct;
-        quantity = 1
+        let { id, name, price, size, quantity } = cartProduct;
+        quantity = 1;
         if (size === undefined) {
           size = "Vous n'avez pas sélectionné de pointure";
         }
 
         let newCartProduct = document.createElement("div");
         newCartProduct.classList.add("cartProduct");
+        newCartProduct.setAttribute("id", `${id}`);
         newCartProduct.innerHTML = `
         <a data-id="${id}" class="cartProductImage" href="/productPages.html?${id}"><img src="./assets/products/${id}_${name_pic(
           name
@@ -386,9 +386,22 @@ onAuthStateChanged(auth, (user) => {
           <button data-id="${id}" class="deleteFromCartBtn">Supprimer du panier</button>
 
         </div>
-        `
-        ;
+        `;
         cartContainer.appendChild(newCartProduct);
+      });
+      const deleteFromCart = document.querySelectorAll(".deleteFromCartBtn");
+
+      deleteFromCart.forEach((cartBTN) => {
+        cartBTN.addEventListener("click", async ({ target }) => {
+          const cartDataID = target.dataset.id;
+          const cartProduct = document.getElementById(`${cartDataID}`);
+          const cartREF = doc(db, "Users", uid);
+
+          cartProduct.remove();
+          await updateDoc(cartREF, {
+            [cartDataID]: deleteField(),
+          });
+        });
       });
     };
     data();
