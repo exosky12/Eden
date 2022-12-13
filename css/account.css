@@ -119,8 +119,8 @@ html {
     background: none;
 }
 .rightside--nav{
-    position: absolute;
-    right: 30px;
+    position: absolute !important;
+    left: 0px;
     background: none;
 }
 .container--nav .cart--icon{
