@@ -378,7 +378,7 @@ onAuthStateChanged(auth, (user) => {
           <div class="modifyQuantity">
 
             <span class="lessQuantity">-</span>
-            <span class="totalQuantity">${quantity}</span>
+            <span class="totalQuantity">${quantity}</span>  
             <span class="moreQuantity">+</span>
 
           </div>
