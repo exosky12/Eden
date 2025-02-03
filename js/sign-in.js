@@ -3,12 +3,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebas
 import {  getAuth, browserSessionPersistence, signInWithEmailAndPassword, setPersistence, signInWithRedirect, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCIeIK2P73AJwoR2Qb2Nac_xJAAn_qUeGA",
-  authDomain: "eden-cdee4.firebaseapp.com",
-  projectId: "eden-cdee4",
-  storageBucket: "eden-cdee4.appspot.com",
-  messagingSenderId: "166124310796",
-  appId: "1:166124310796:web:74391c4bca9e92c3e53929"
+  // add your firebase config
 };
 
 // Initialize Firebase
